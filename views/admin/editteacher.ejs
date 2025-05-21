@@ -1,0 +1,173 @@
+<%- include("../partials/adminheader.ejs") %>
+
+<!-- Sidebar Start -->
+<%- include("./menu/sidebar.ejs") %>
+<!-- Sidebar End -->
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Start -->
+
+  <%- include("./menu/navbar.ejs") %>
+  <!-- Blank Start -->
+
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 bg-light p-5 rounded shadow-sm">
+        <h2 class="mb-4 text-center">Add New Teacher</h2>
+        <form
+          action="/admin/add-teacher"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+
+          <!-- Subject Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Subject Title</label>
+            <select class="form-select" id="title" name="title" required>
+              <option value="">-- Select Subject Title --</option>
+              <option value="Mathematics Teacher">Mathematics Teacher</option>
+              <option value="Science Teacher">Science Teacher</option>
+              <option value="English Teacher">English Teacher</option>
+              <option value="History Teacher">History Teacher</option>
+              <option value="Computer Science Teacher">
+                Computer Science Teacher
+              </option>
+            </select>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="phone"
+              required
+            />
+          </div>
+
+          <!-- Bio -->
+          <div class="mb-3">
+            <label for="bio" class="form-label">Biography</label>
+            <textarea
+              class="form-control"
+              id="bio"
+              name="bio"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Subjects Taught -->
+          <div class="mb-3">
+            <label for="subjects" class="form-label">Subjects Taught</label>
+            <select
+              class="form-select"
+              id="subjects"
+              name="subjects"
+              multiple
+              size="5"
+              required
+            >
+              <option value="Algebra">Algebra</option>
+              <option value="Geometry">Geometry</option>
+              <option value="Calculus">Calculus</option>
+              <option value="Trigonometry">Trigonometry</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="English Literature">English Literature</option>
+              <option value="World History">World History</option>
+              <option value="Computer Programming">Computer Programming</option>
+            </select>
+            <div class="form-text">
+              Hold Ctrl (Windows) or Cmd (Mac) to select multiple.
+            </div>
+          </div>
+
+          <!-- Qualifications -->
+          <div class="mb-3">
+            <label for="qualifications" class="form-label"
+              >Qualifications (comma separated)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="qualifications"
+              name="qualifications"
+              placeholder="e.g. B.Sc. in Mathematics, M.Ed. in Education"
+              required
+            />
+          </div>
+
+          <!-- Upload Photo -->
+          <div class="mb-3">
+            <label for="photo" class="form-label">Upload Profile Photo</label>
+            <input
+              class="form-control"
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              required
+            />
+          </div>
+
+          <!-- Submit -->
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Add Teacher</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blank End -->
+
+  <!-- Footer Start -->
+  <script>
+    // Bootstrap validation
+    (() => {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+  <%- include("../partials/adminfooter.ejs") %>

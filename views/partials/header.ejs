@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Dynamic SEO Info -->
+    <title><%= title || 'Salem Bakhit High School' %></title>
+    <meta
+      name="description"
+      content="Salem Bakhit High School is a leading institution focused on quality education."
+    />
+    <meta
+      name="keywords"
+      content="Salem Bakhit, High School, Education, Liberia, Quality Learning, Admission"
+    />
+    <meta name="author" content="Salem Bakhit High School" />
+
+    <!-- Open Graph Tags (for Facebook, WhatsApp) -->
+    <meta
+      property="og:title"
+      content="<%= title || 'Salem Bakhit High School' %>"
+    />
+    <meta
+      property="og:description"
+      content="Explore our campus, staff, programs, and admission opportunities."
+    />
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:url" content="https://www.example.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="<%= baseURL %>/css/open-iconic-bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="<%= baseURL %>/css/animate.css" />
+
+    <link rel="stylesheet" href="<%= baseURL %>/css/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="<%= baseURL %>/css/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" href="<%= baseURL %>/css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="<%= baseURL %>/css/aos.css" />
+
+    <link rel="stylesheet" href="<%= baseURL %>/css/ionicons.min.css" />
+
+    <link rel="stylesheet" href="<%= baseURL %>/css/flaticon.css" />
+    <link rel="stylesheet" href="<%= baseURL %>/css/icomoon.css" />
+    <link rel="stylesheet" href="<%= baseURL %>/css/style.css" />
+  </head>
+  <body style="position: relative">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light"
+      id="ftco-navbar"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center text-center justify-content-center"
+          href="/"
+        >
+          <img
+            src="<%= baseURL %>/images/logo.png"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-top mr-2"
+          />
+          <span class="text-white font-weight-bold"
+            >Salem Bakhit High School</span
+          >
+        </a>
+        <button
+          class="navbar-toggler w-100 mx-auto text-center p-2 border my-5"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="d-inline-block text-center"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/salem-bakhit" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/salem-bakhit/about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/salem-bakhit/staff" class="nav-link">Teachers</a>
+            </li>
+            <li class="nav-item">
+              <a href="/salem-bakhit/subjects" class="nav-link">Subjects</a>
+            </li>
+            <li class="nav-item">
+              <a href="/salem-bakhit/news" class="nav-link">News</a>
+            </li>
+
+            <!-- DROPDOWN -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="morePagesDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <div
+                class="dropdown-menu text-center"
+                aria-labelledby="morePagesDropdown"
+              >
+                <a class="dropdown-item" href="/salem-bakhit/administrators"
+                  >Administrators</a
+                >
+                <a class="dropdown-item" href="/salem-bakhit/alumni"
+                  >Notable Alumni</a
+                >
+                <a class="dropdown-item" href="/salem-bakhit/history"
+                  >Our History</a
+                >
+                <a class="dropdown-item" href="/salem-bakhit/achievements"
+                  >Achievements</a
+                >
+                <a class="dropdown-item" href="/salem-bakhit/gallery"
+                  >Gallery</a
+                >
+                <a class="dropdown-item" href="/salem-bakhit/graduate"
+                  >Graduate</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="/salem-bakhit/contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+

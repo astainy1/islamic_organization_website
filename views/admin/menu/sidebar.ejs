@@ -1,0 +1,168 @@
+<!-- Sidebar Start -->
+<div class="sidebar pe-4 pb-3">
+  <nav class="navbar bg-light-full navbar-light">
+    <!-- Admin Info -->
+    <div class="d-flex align-items-center ms-4 mt-4 mb-3 mt-md-3">
+      <div class="ms-3 text-end">
+        <h6 class="fw-bold mb-2 mt-5 mt-md-0">Current Time</h6>
+        <span id="clock" class="text-muted small fw-bold text-black"></span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar-nav w-100">
+      <a href="/admin/dashboard" class="nav-item nav-link active">
+        <i class="fa fa-tachometer-alt me-2"></i>Dashboard
+      </a>
+
+      <!-- Events -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-calendar-alt me-2"></i>Events
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-event" class="dropdown-item">Post Event</a>
+          <a href="/admin/manage-event" class="dropdown-item">Manage Events</a>
+        </div>
+      </div>
+
+      <!-- Teachers -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-chalkboard-teacher me-2"></i>Teachers
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-teacher" class="dropdown-item">Add Teacher</a>
+          <a href="/admin/manage-teacher" class="dropdown-item"
+            >Manage Teachers</a
+          >
+        </div>
+      </div>
+
+      <!-- Classes -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-school me-2"></i>Classes
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-class" class="dropdown-item">Add Class</a>
+          <a href="/admin/manage-class" class="dropdown-item">Manage Classes</a>
+        </div>
+      </div>
+
+      <!-- Subjects -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-book me-2"></i>Subjects
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-subject" class="dropdown-item">Add Subject</a>
+          <a href="/admin/manage-subject" class="dropdown-item"
+            >Manage Subjects</a
+          >
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-image me-2"></i>Gallery
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-gallery" class="dropdown-item">Upload Photo</a>
+          <a href="/admin/manage-gallery" class="dropdown-item"
+            >Manage Gallery</a
+          >
+        </div>
+      </div>
+
+      <!-- Faculties -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-users me-2"></i>Faculties
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-faculty" class="dropdown-item">Add Faculty</a>
+          <a href="/admin/manage-faculty" class="dropdown-item"
+            >Manage Faculties</a
+          >
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="far fa-file-alt me-2"></i>Pages
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/home" class="dropdown-item">Home</a>
+          <a href="/admin/about" class="dropdown-item">About Us</a>
+          <a href="/admin/history" class="dropdown-item">History</a>
+          <a href="/admin/achievement" class="dropdown-item">Achievements</a>
+          <a href="/admin/contact" class="dropdown-item">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Admission -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-user-plus me-2"></i>Admissions
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/announce-admission" class="dropdown-item"
+            >Announce Admission</a
+          >
+          <a href="/admin/view-applicant" class="dropdown-item"
+            >View Applicants</a
+          >
+          <a href="/admin/mail-applicant" class="dropdown-item">Send Mail</a>
+        </div>
+      </div>
+
+      <!-- Enquiries -->
+
+      <!-- Testimonial -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-quote-left me-2"></i>Testimonial
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/add-testimony" class="dropdown-item">Add Testimony</a>
+          <a href="/admin/manage-testimony" class="dropdown-item"
+            >Manage Testimonies</a
+          >
+        </div>
+      </div>
+
+      <!-- Enquiries -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-question-circle me-2"></i>Enquiries
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/view-enquiry" class="dropdown-item">View Enquiries</a>
+          <a href="/admin/reply-enquiry" class="dropdown-item">Send Message</a>
+        </div>
+      </div>
+
+      <!-- Site Settings -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-cogs me-2"></i>Site Settings
+        </a>
+        <div class="dropdown-menu bg-white border-bottom-2">
+          <a href="/admin/home-banner" class="dropdown-item">Home Banner</a>
+          <a href="/admin/other-settings" class="dropdown-item"
+            >Other Settings</a
+          >
+        </div>
+      </div>
+
+      <!-- Logout -->
+      <a href="/admin/logout" class="nav-item nav-link">
+        <i class="fa fa-sign-out-alt me-2"></i>Logout
+      </a>
+    </div>
+  </nav>
+</div>
+<!-- Sidebar End -->

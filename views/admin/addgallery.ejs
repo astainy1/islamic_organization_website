@@ -1,0 +1,49 @@
+<%- include("../partials/adminheader.ejs") %>
+
+<!-- Sidebar Start -->
+<%- include("./menu/sidebar.ejs") %>
+<!-- Sidebar End -->
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Start -->
+  <%- include("./menu/navbar.ejs") %>
+  <!-- Navbar End -->
+
+  <!-- Gallery Upload Start -->
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h3 class="mb-4 text-center">Upload Photo to Gallery</h3>
+      <form action="/admin/add-gallery" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="photoTitle" class="form-label">Photo Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="photoTitle"
+            name="title"
+            placeholder="Enter a title for the photo"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="photo" class="form-label">Select Photo</label>
+          <input
+            type="file"
+            class="form-control"
+            id="photo"
+            name="photo"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Upload Photo</button>
+      </form>
+    </div>
+  </div>
+  <!-- Gallery Upload End -->
+
+  <!-- Footer Start -->
+  <%- include("../partials/adminfooter.ejs") %>
+  <!-- Footer End -->
+</div>

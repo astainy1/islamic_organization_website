@@ -1,0 +1,68 @@
+<%- include("../partials/adminheader.ejs") %>
+
+<!-- Sidebar Start -->
+<%- include("./menu/sidebar.ejs") %>
+<!-- Sidebar End -->
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Start -->
+  <%- include("./menu/navbar.ejs") %>
+
+  <!-- Add Class Form Start -->
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 bg-light p-5 rounded shadow-sm">
+        <h2 class="mb-4 text-center">Add New Class </h2>
+        <form action="/admin/add-class" method="POST">
+          <!-- Class Name -->
+          <div class="mb-3">
+            <label for="className" class="form-label">Class Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="className"
+              name="className"
+              placeholder="e.g. Grade 1, K-2, Grade 12"
+              required
+            />
+          </div>
+
+          <!-- Class Code -->
+          <div class="mb-3">
+            <label for="classCode" class="form-label">Class Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="classCode"
+              name="classCode"
+              placeholder="e.g. G1, K2, G12"
+              required
+            />
+          </div>
+
+          <!-- Optional Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description (Optional)</label>
+            <textarea
+              class="form-control"
+              id="description"
+              name="description"
+              rows="3"
+              placeholder="Short note about this class or its role"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Add Class</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Add Class Form End -->
+
+  <!-- Footer Start -->
+  <%- include("../partials/adminfooter.ejs") %>
+

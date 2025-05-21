@@ -1,0 +1,42 @@
+<!-- Navbar Start -->
+<nav
+  class="navbar navbar-expand bg-light-full navbar-light sticky-top px-4 py-0 top-navbar shadow"
+>
+  <a href="#" class="sidebar-toggler flex-shrink-0">
+    <i class="fa fa-bars"></i>
+  </a>
+
+  <!-- Website Link Section (centered) -->
+  <div class="flex-grow-1 d-flex justify-content-center">
+    <a
+      href="/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-link text-primary-full fw-bold"
+    >
+      <i class="fa fa-globe me-2"></i>
+      Visit Website
+    </a>
+  </div>
+
+  <!-- Right Side Navbar -->
+  <div class="navbar-nav align-items-center ms-auto">
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <img
+          class="rounded-circle me-lg-2"
+          src="<%= baseURL %>/admin/img/user.jpg"
+          alt=""
+          style="width: 40px; height: 40px"
+        />
+        <span class="d-none d-lg-inline-flex">John Doe</span>
+      </a>
+      <div
+        class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0 shadow p-4"
+      >
+        <a href="/admin/user-profile" class="dropdown-item px-3">My Profile</a>
+        <a href="/admin/logout" class="dropdown-item px-3">Log Out</a>
+      </div>
+    </div>
+  </div>
+</nav>

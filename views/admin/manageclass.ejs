@@ -1,0 +1,99 @@
+<%- include("../partials/adminheader.ejs") %>
+
+<!-- Sidebar Start -->
+<%- include("./menu/sidebar.ejs") %>
+<!-- Sidebar End -->
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Start -->
+  <%- include("./menu/navbar.ejs") %>
+
+  <!-- Manage Classes Start -->
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Manage Classes</h2>
+      <a href="/admin/add-class" class="btn btn-success">+ Add New Class</a>
+    </div>
+
+    <div class="table-responsive bg-light p-4 rounded shadow-sm">
+      <table class="table table-bordered table-hover text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Class Name</th>
+            <th>Class Code</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example Rows -->
+          <tr>
+            <td>1</td>
+            <td>Grade 1</td>
+            <td>G1</td>
+            <td>Introductory class for basic learning</td>
+            <td>
+              <a href="/admin/edit-class" class="btn btn-sm btn-primary">Edit</a>
+              <form
+                  action="/admin/delete-class/1"
+                  method="POST"
+                  class="d-inline"
+                  onsubmit="return confirm('Are you sure you want to delete this teacher?');"
+                >
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    Delete
+                  </button>
+                </form>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Grade 12</td>
+            <td>G12</td>
+            <td>Final year of high school</td>
+            <td>
+              
+              <a href="/admin/edit-class" class="btn btn-sm btn-primary">Edit</a>
+              <form
+                  action="/admin/delete-class/1"
+                  method="POST"
+                  class="d-inline"
+                  onsubmit="return confirm('Are you sure you want to delete this teacher?');"
+                >
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    Delete
+                  </button>
+                </form>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>JSS 3</td>
+            <td>JS3</td>
+            <td>Junior high school level</td>
+            <td>
+              <a href="/admin/edit-class" class="btn btn-sm btn-primary">Edit</a>
+              <form
+                  action="/admin/delete-class/1"
+                  method="POST"
+                  class="d-inline"
+                  onsubmit="return confirm('Are you sure you want to delete this teacher?');"
+                >
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    Delete
+                  </button>
+                </form>
+            </td>
+          </tr>
+          <!-- End of  Rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Manage Classes End -->
+
+  <!-- Footer Start -->
+  <%- include("../partials/adminfooter.ejs") %>
+

@@ -1,0 +1,78 @@
+<%- include("../partials/adminheader.ejs") %>
+
+<!-- Sidebar Start -->
+<%- include("./menu/sidebar.ejs") %>
+<!-- Sidebar End -->
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Start -->
+  <%- include("./menu/navbar.ejs") %>
+
+  <!-- Add Subject Form Start -->
+  <div class="container-fluid pt-4 px-4">
+    <div class="row justify-content-center">
+      <div class="col-md-10 bg-light p-5 rounded shadow-sm">
+        <h2 class="mb-4 text-center">Add New Subject</h2>
+        <form action="/admin/add-subject" method="POST" enctype="multipart/form-data">
+          <!-- Subject Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Subject Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="e.g. Biology" required />
+          </div>
+
+          <!-- Instructor -->
+          <div class="mb-3">
+            <label for="instructor" class="form-label">Instructor Name</label>
+            <input type="text" class="form-control" id="instructor" name="instructor" placeholder="e.g. Ms. Dunbar" required />
+          </div>
+
+          <!-- Grade Level -->
+          <div class="mb-3">
+            <label for="grade_level" class="form-label">Grade Level</label>
+            <input type="text" class="form-control" id="grade_level" name="grade_level" placeholder="e.g. 11 - 12" required />
+          </div>
+
+          <!-- Max Students -->
+          <div class="mb-3">
+            <label for="max_students" class="form-label">Maximum Number of Students</label>
+            <input type="number" class="form-control" id="max_students" name="max_students" placeholder="e.g. 30" required />
+          </div>
+
+          <!-- Duration -->
+          <div class="mb-3">
+            <label for="duration" class="form-label">Duration</label>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="e.g. 1 Academic Year" required />
+          </div>
+
+          <!-- Overview / Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Subject Overview</label>
+            <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+          </div>
+
+          <!-- Topics Covered -->
+          <div class="mb-3">
+            <label for="topics" class="form-label">Topics Covered (comma separated)</label>
+            <input type="text" class="form-control" id="topics" name="topics" placeholder="e.g. Cell structure, Genetics, Human anatomy" required />
+          </div>
+
+          <!-- Upload Image -->
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload Subject Image</label>
+            <input class="form-control" type="file" id="image" name="image" accept="image/*" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Add Subject</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Add Subject Form End -->
+
+  <!-- Footer Start -->
+  <%- include("../partials/adminfooter.ejs") %>
+

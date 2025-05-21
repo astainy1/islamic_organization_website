@@ -1,0 +1,128 @@
+<%- include("../partials/adminheader.ejs") %> <%- include("./menu/sidebar.ejs")
+%>
+
+<!-- Content Start -->
+<div class="content">
+  <!-- Navbar Starts -->
+  <%- include("./menu/navbar.ejs") %>
+  <!-- Navbar End -->
+
+  <!-- School info start -->
+  <div class="container-fluid pt-4 px-4">
+    <div
+      class="bg-light-full rounded d-flex flex-column flex-md-row align-items-center justify-content-between p-4"
+    >
+      <div class="d-flex align-items-center mb-3 mb-md-0">
+        <img
+          src="<%= baseURL %>/admin/img/logo.png"
+          alt="School Logo"
+          class="me-3"
+          style="width: 60px; height: 60px; object-fit: cover"
+        />
+        <div>
+          <h4 class="mb-0">Salem Bakhit High School</h4>
+          <small class="text-muted">"Empowering Future Leaders"</small>
+        </div>
+      </div>
+
+      <div class="text-center text-md-end">
+        <p class="mb-1">
+          <i class="fa fa-map-marker-alt me-2 text-primary-full"></i>Caldwell
+          Junction, Monrovia, Liberia
+        </p>
+        <p class="mb-1">
+          <i class="fa fa-envelope me-2 text-primary-full"></i
+          >info@salembakhitschool.edu.lr
+        </p>
+        <p class="mb-0">
+          <i class="fa fa-phone-alt me-2 text-primary-full"></i>+231 77 777 7777
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- School info end -->
+
+  <!-- Summary Cards -->
+  <div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+      <div class="col-sm-6 col-xl-3">
+        <div
+          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
+        >
+          <i class="fa fa-school fa-3x text-primary-full"></i>
+          <div class="ms-3">
+            <p class="mb-2">Classes</p>
+            <h6 class="mb-0">12</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div
+          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
+        >
+          <i class="fa fa-book fa-3x text-primary-full"></i>
+          <div class="ms-3">
+            <p class="mb-2">Subjects</p>
+            <h6 class="mb-0">14</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div
+          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
+        >
+          <i class="fa fa-chalkboard-teacher fa-3x text-primary-full"></i>
+          <div class="ms-3">
+            <p class="mb-2">Teachers</p>
+            <h6 class="mb-0">11</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div
+          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
+        >
+          <i class="fa fa-user-shield fa-3x text-primary-full"></i>
+          <div class="ms-3">
+            <p class="mb-2">Administrators</p>
+            <h6 class="mb-0">12</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar & Map -->
+  <div class="container-fluid pt-4 px-4 overflow-hidden">
+    <div class="row g-4">
+      <div class="col-sm-12 col-md-6">
+        <div class="h-100 bg-light rounded p-4">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Calendar</h6>
+          </div>
+          <div id="calender"></div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="bg-light rounded h-100 p-4">
+          <iframe
+            class="position-relative rounded w-100 h-100"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.4776223646322!2d-10.784814685647406!3d6.367943923950747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf09f9ee3e20f131%3A0xaecf2c989e0c150e!2sCaldwell%20Junction!5e0!3m2!1sen!2s!4v1747418855512!5m2!1sen!2s"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <%- include("../partials/adminfooter.ejs") %>
+</div>
