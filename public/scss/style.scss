@@ -7,7 +7,7 @@ $white: #fff;
 $black: #000000;
 $darken: #0d1128;
 
-$primary: #1602ce;
+$primary: #05a30a;
 $secondary: #fda638;
 $tertiary: #8cc152;
 $quarternary: #f1453d;
@@ -61,7 +61,7 @@ $fifth: #5d50c6;
     rgba(13, 17, 40, 1) 0%,
     rgba(253, 97, 0, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1128', endColorstr='#0018ff', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1128', endColorstr='#05a30a', GradientType=1 );
 }
 @mixin gradient-background-two() {
   background: rgba(253, 97, 0, 1);
@@ -96,7 +96,7 @@ $fifth: #5d50c6;
     rgba(253, 97, 0, 1) 0%,
     rgba(13, 17, 40, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0018ff', endColorstr='#0d1128', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05a30a', endColorstr='#0d1128', GradientType=1 );
 }
 
 html {

@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-  --primary: #1602ce;
+  --primary: #05a30a;
   --light: #edeef8;
   --dark: #191c24;
 }
@@ -10,26 +10,26 @@
 }
 .btn-primary {
   color: #fff;
-  background: #1602ce;
+  background: #05a30a;
 }
 .text-primary-full {
-  color: #1602ce;
+  color: #05a30a;
 }
 a {
-  color: #1602ce;
+  color: #05a30a;
 }
 
 .top-navbar {
-  border-bottom: 2px solid #1602ce;
+  border-bottom: 2px solid #05a30a;
 }
 .dropdown-menu a:hover {
-  background: #1602ce;
+  background: #05a30a;
   color: #fff;
   border-radius: 0;
 }
 
 .dropdown-menu {
-  border-bottom: 1px solid #1602ce;
+  border-bottom: 1px solid #05a30a;
 }
 
 .dropdown-menu a {

@@ -9,11 +9,11 @@ require("dotenv").config();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/salem-bakhit", express.static(path.join(__dirname, "public")));
+app.use("/higher-lajinah", express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static("uploads"));
 app.use((req, res, next) => {
-  res.locals.baseURL = "/salem-bakhit";
+  res.locals.baseURL = "/higher-lajinah";
   next();
 });
 
@@ -63,14 +63,14 @@ const publicPageNotFound = require("./middleware/public404");
 const publicServerError = require("./middleware/public500");
 
 // Public routes
-app.use("/salem-bakhit", publicRoutes);
+app.use("/higher-lajinah", publicRoutes);
 
 // 404 and 500 Middleware
-app.use("/salem-bakhit", publicPageNotFound); // 404 Middleware
-app.use("/salem-bakhit", publicServerError); // Server Error
+app.use("/higher-lajinah", publicPageNotFound); // 404 Middleware
+app.use("/higher-lajinah", publicServerError); // Server Error
 
 app.get("/", (req, res) => {
-  return res.redirect("/salem-bakhit");
+  return res.redirect("/higher-lajinah");
 });
 
 // Admin routes
