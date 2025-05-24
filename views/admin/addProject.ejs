@@ -8,24 +8,34 @@
     <div class="bg-light rounded p-4">
       <h4 class="mb-4 text-center">Add New Project</h4>
 
-      <form action="/admin/add-project" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+      <form
+        action="/admin/add-project"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+        onsubmit="return validateGallery()"
+      >
         <div class="row g-3">
           <!-- Title -->
           <div class="col-md-6">
             <label class="form-label">Project Title</label>
             <input type="text" name="title" class="form-control" required />
+            <div class="invalid-feedback">Project title is required.</div>
           </div>
 
           <!-- Location -->
           <div class="col-md-6">
             <label class="form-label">Location</label>
             <input type="text" name="location" class="form-control" required />
+            <div class="invalid-feedback">Location is required.</div>
           </div>
 
           <!-- Date -->
           <div class="col-md-6">
             <label class="form-label">Date</label>
             <input type="date" name="date" class="form-control" required />
+            <div class="invalid-feedback">Project date is required.</div>
           </div>
 
           <!-- Ongoing -->
@@ -35,33 +45,40 @@
               <option value="1">Yes</option>
               <option value="0" selected>No</option>
             </select>
+            <div class="invalid-feedback">Please select if project is ongoing.</div>
           </div>
 
           <!-- Summary -->
           <div class="col-md-12">
             <label class="form-label">Summary</label>
             <textarea name="summary" class="form-control" rows="2" required></textarea>
+            <div class="invalid-feedback">Summary is required.</div>
           </div>
 
           <!-- Description -->
           <div class="col-md-12">
             <label class="form-label">Full Description</label>
             <textarea name="description" class="form-control" rows="5" required></textarea>
+            <div class="invalid-feedback">Description is required.</div>
           </div>
 
           <!-- Cover Image -->
           <div class="col-md-6">
             <label class="form-label">Cover Image</label>
             <input type="file" name="cover_image" accept="image/*" class="form-control" required />
+            <div class="invalid-feedback">Cover image is required.</div>
           </div>
 
-          <!-- Gallery -->
+          <!-- Gallery Images -->
           <div class="col-md-6">
             <label class="form-label">Gallery Images (up to 5)</label>
-            <input type="file" name="gallery" accept="image/*" class="form-control" multiple />
+            <input type="file" id="gallery" name="gallery" accept="image/*" class="form-control" multiple />
+            <div id="gallery-error" class="text-danger small mt-1" style="display: none;">
+              You can upload a maximum of 5 images.
+            </div>
           </div>
 
-          <!-- Submit -->
+          <!-- Submit Button -->
           <div class="col-12 text-center mt-4">
             <button type="submit" class="btn btn-success px-5">Save Project</button>
           </div>
@@ -70,4 +87,36 @@
     </div>
   </div>
 
+
+  <!-- JS VALIDATION -->
+  <script>
+    // Bootstrap form validation
+    (() => {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.from(forms).forEach(form => {
+        form.addEventListener("submit", event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        });
+      });
+    })();
+
+    // Max gallery image check
+    function validateGallery() {
+      const input = document.getElementById("gallery");
+      const error = document.getElementById("gallery-error");
+      if (input && input.files.length > 5) {
+        error.style.display = "block";
+        return false;
+      }
+      error.style.display = "none";
+      return true;
+    }
+  </script>
   <%- include("../partials/adminfooter.ejs") %>
+
+  

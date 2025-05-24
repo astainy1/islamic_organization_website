@@ -1,0 +1,79 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Project Details</h4>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label><strong>Title:</strong></label>
+          <p><%= project.title %></p>
+        </div>
+
+        <div class="col-md-6">
+          <label><strong>Location:</strong></label>
+          <p><%= project.location %></p>
+        </div>
+
+        <div class="col-md-6">
+          <label><strong>Date:</strong></label>
+          <p><%= new Date(project.date).toLocaleDateString() %></p>
+        </div>
+
+        <div class="col-md-6">
+          <label><strong>Ongoing:</strong></label>
+          <span class="badge bg-<%= project.ongoing ? 'success' : 'secondary' %>">
+            <%= project.ongoing ? "Yes" : "No" %>
+          </span>
+        </div>
+
+        <div class="col-md-12">
+          <label><strong>Summary:</strong></label>
+          <p><%= project.summary %></p>
+        </div>
+
+        <div class="col-md-12">
+          <label><strong>Description:</strong></label>
+          <p><%= project.description %></p>
+        </div>
+
+        <!-- Cover Image -->
+        <div class="col-md-6">
+          <label><strong>Cover Image:</strong></label>
+          <% if (project.cover_image) { %>
+            <img src="/uploads/projects/<%= project.cover_image %>" class="img-fluid rounded shadow-sm mt-2" alt="cover image">
+          <% } else { %>
+            <p class="text-muted">No image available.</p>
+          <% } %>
+        </div>
+
+        <!-- Gallery -->
+        <div class="col-md-6">
+          <label><strong>Gallery:</strong></label>
+          <% if (gallery.length > 0) { %>
+            <div class="row mt-2">
+              <% gallery.forEach(img => { %>
+                <div class="col-4 mb-2">
+                  <img src="/uploads/projects/<%= img.image_path %>" class="img-fluid rounded" alt="gallery image">
+                </div>
+              <% }) %>
+            </div>
+          <% } else { %>
+            <p class="text-muted">No gallery images uploaded.</p>
+          <% } %>
+        </div>
+
+        <!-- Back Button -->
+        <div class="col-12 text-center mt-4">
+          <a href="/admin/manage-project" class="btn btn-secondary px-5">Back to Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>
+

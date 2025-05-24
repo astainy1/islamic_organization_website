@@ -1,0 +1,122 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4">Edit Project</h4>
+
+      <form
+        action="/admin/edit-project/<%= project.id %>"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+        onsubmit="return validateGallery()"
+      >
+        <div class="row g-3">
+          <!-- Title -->
+          <div class="col-md-6">
+            <label class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" value="<%= project.title %>" required />
+            <div class="invalid-feedback">Title is required.</div>
+          </div>
+
+          <!-- Location -->
+          <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" value="<%= project.location %>" required />
+            <div class="invalid-feedback">Location is required.</div>
+          </div>
+
+          <!-- Date -->
+          <div class="col-md-6">
+            <label class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" value="<%= project.date.toISOString().split('T')[0] %>" required />
+            <div class="invalid-feedback">Date is required.</div>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-6">
+            <label class="form-label">Summary</label>
+            <input type="text" name="summary" class="form-control" value="<%= project.summary %>" required />
+            <div class="invalid-feedback">Summary is required.</div>
+          </div>
+
+          <!-- Description -->
+          <div class="col-md-12">
+            <label class="form-label">Description</label>
+            <textarea name="description" rows="5" class="form-control" required><%= project.description %></textarea>
+            <div class="invalid-feedback">Description is required.</div>
+          </div>
+
+          <!-- Cover Image -->
+          <div class="col-md-6">
+            <label class="form-label">Cover Image</label><br />
+            <% if (project.cover_image) { %>
+              <img src="/uploads/projects/<%= project.cover_image %>" class="img-thumbnail mb-2" width="100">
+            <% } %>
+            <input type="file" name="cover_image" accept="image/*" class="form-control" />
+          </div>
+
+          <!-- Gallery Images -->
+          <div class="col-md-6">
+            <label class="form-label">Gallery Images (replace all, max 5)</label><br />
+            <% gallery.forEach(img => { %>
+              <img src="/uploads/projects/<%= img.image_path %>" class="img-thumbnail mr-1 mb-2" width="80">
+            <% }); %>
+            <input type="file" name="gallery" id="gallery" accept="image/*" multiple class="form-control" />
+            <div class="form-text text-danger" id="gallery-error" style="display:none;">You can upload up to 5 images only.</div>
+          </div>
+
+          <!-- Ongoing Checkbox -->
+          <div class="col-md-12">
+            <label>
+              <input type="checkbox" name="ongoing" <%= project.ongoing ? "checked" : "" %>> Ongoing Project
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="col-12 text-center mt-3">
+            <button type="submit" class="btn btn-success px-5">Update Project</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    <!-- JavaScript Validation Script -->
+  <script>
+    // Bootstrap 5 validation
+    (() => {
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        });
+      });
+    })();
+
+    // Gallery upload validation
+    function validateGallery() {
+      const input = document.getElementById("gallery");
+      const error = document.getElementById("gallery-error");
+
+      if (input && input.files.length > 5) {
+        error.style.display = "block";
+        return false;
+      } else {
+        error.style.display = "none";
+        return true;
+      }
+    }
+  </script>
+  <%- include("../partials/adminfooter.ejs") %>
+

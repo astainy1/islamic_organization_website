@@ -5,6 +5,7 @@ const router = express.Router();
 const auth = require("../middleware/auth");
 const userProfileUpload = require("../middleware/userProfile");
 const uploadProgram = require("../middleware/programUpload");
+const uploadProject = require("../middleware/projectUpload");
 
 // Import Controller
 const login = require("../controller/admin/login");
@@ -26,6 +27,7 @@ const partner = require("../controller/admin/partners");
 const donation = require("../controller/admin/donation");
 const message = require("../controller/admin/messages");
 const hq = require("../controller/admin/headquarters");
+const announcement = require("../controller/admin/announcements");
 
 // Test
 // console.log(programs);
@@ -60,19 +62,36 @@ router.post("/edit-contact", auth, contact.postContact);
 
 // Programs Page Routes
 router.get("/add-program", auth, programs.getAddProgram);
-router.post("/add-program", auth, uploadProgram.programUploads, programs.postAddProgram);
+router.post(
+  "/add-program",
+  auth,
+  uploadProgram.programUploads,
+  programs.postAddProgram
+);
 router.get("/manage-program", auth, programs.getManageProgram);
 router.post("/delete-program/:id", auth, programs.deleteProgram);
 router.get("/edit-program/:id", auth, programs.getEditProgram);
-router.post("/edit-program/:id", auth, uploadProgram.programUploads, programs.postEditProgram);
+router.post(
+  "/edit-program/:id",
+  auth,
+  uploadProgram.programUploads,
+  programs.postEditProgram
+);
 router.get("/view-program/:id", auth, programs.viewProgram);
-
 
 // Projects Page Routes
 router.get("/add-project", auth, projects.getAddProject);
-router.post("/add-project", auth, projects.postAddProject);
+router.post("/add-project", auth, uploadProject, projects.postAddProject);
 router.get("/manage-project", auth, projects.getManageProject);
-router.post("manage-project", auth, projects.postManageProject);
+router.get("/view-project/:id", auth, projects.getViewProject);
+router.post("/delete-project/:id", auth, projects.deleteProject);
+router.get("/edit-project/:id", auth, projects.getEditProject);
+router.post("/edit-project/:id", auth, uploadProject, projects.postEditProject);
+
+// Announcements
+router.get("/add-announcement", auth, announcement.getAnnouncement);
+router.post("/add-announcement", auth, announcement.getAnnouncement);
+router.get("/manage-announcements", auth, announcement.getManageAnnouncement)
 
 // Testimonial Routes
 router.get("/add-testimonial", auth, testimonial.getAddTestimonial);
