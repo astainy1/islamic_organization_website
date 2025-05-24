@@ -1,133 +1,136 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../middleware/auth");
 
+// Import Middleware
+const auth = require("../middleware/auth");
+const userProfileUpload = require("../middleware/userProfile");
+const uploadProgram = require("../middleware/programUpload");
+
+// Import Controller
 const login = require("../controller/admin/login");
-const event = require("../controller/admin/events");
-const dashboard = require("../controller/admin/dashboard");
 const logout = require("../controller/admin/logout");
-const teacher = require("../controller/admin/teacher");
-const classes = require("../controller/admin/classes");
-const subject = require("../controller/admin/subject");
-const gallery = require("../controller/admin/gallery");
-const faculty = require("../controller/admin/faculty");
+const dashboard = require("../controller/admin/dashboard");
+const media = require("../controller/admin/media");
 const home = require("../controller/admin/home");
 const about = require("../controller/admin/about");
-const history = require("../controller/admin/history");
-const achievement = require("../controller/admin/achievement");
 const contact = require("../controller/admin/contact");
-const admission = require("../controller/admin/admission");
-const testimony = require("../controller/admin/testimony");
-const enquiry = require("../controller/admin/enquiry");
+const testimonial = require("../controller/admin/testimonials");
 const settings = require("../controller/admin/settings");
 const profile = require("../controller/admin/profile");
+const programs = require("../controller/admin/programs");
+const projects = require("../controller/admin/projects");
+const documents = require("../controller/admin/documents");
+const news = require("../controller/admin/news");
+const leader = require("../controller/admin/leadership");
+const partner = require("../controller/admin/partners");
+const donation = require("../controller/admin/donation");
+const message = require("../controller/admin/messages");
+const hq = require("../controller/admin/headquarters");
 
-// GET login page
+// Test
+// console.log(programs);
+
+// Login - Get Route
 // router.get("/admin", login.getLogin);
 router.get("/login", login.getLogin);
 
-// POST login
+// Login - Post Route
 router.post("/login", login.postLogin);
 
 // Dashboard
 router.get("/dashboard", auth, dashboard.getDashboard);
 
-// Event
-router.get("/add-event", auth, event.getAddEvent);
-router.post("/add-event", auth, event.postAddEvent);
-router.get("/manage-event", auth, event.getManageEvent);
-router.get("/edit-event", auth, event.getEditEvent);
-router.post("/edit-event", auth, event.postEditEvent);
-router.get("/view-event", auth, event.getViewEvent);
+// Media Routes
+router.get("/add-media", auth, media.getAddMedia);
+router.post("/add-media", auth, media.postAddMedia);
+router.get("/manage-media", auth, media.getManageMedia);
+router.post("/manage-media", auth, media.postManageMedia);
 
-// Teachers
-router.get("/add-teacher", auth, teacher.getAddTeacher);
-router.post("/add-teacher", auth, teacher.postAddTeacher);
-router.get("/manage-teacher", auth, teacher.getManageTeacher);
-router.post("/manage-teacher", auth, teacher.postManageTeacher);
-router.get("/view-teacher", auth, teacher.getViewSingleTeacher);
-router.get("/edit-teacher", auth, teacher.getEditTeacher);
-router.post("/edit-teacher", auth, teacher.postEditTeacher);
-
-// Classes
-router.get("/add-class", auth, classes.getAddClass);
-router.post("/add-class", auth, classes.postAddClass);
-router.get("/manage-class", auth, classes.getManageClass);
-router.post("/manage-class", auth, classes.postManageClass);
-
-// Subjects
-router.get("/add-subject", auth, subject.getAddSubject);
-router.post("/add-subject", auth, subject.postAddSubject);
-router.get("/manage-subject", auth, subject.getManageSubject);
-router.post("/manage-subject", auth, subject.postManageSubject);
-
-// Gellery
-router.get("/add-gallery", auth, gallery.getAddGallery);
-router.post("/add-gallery", auth, gallery.postAddGallery);
-router.get("/manage-gallery", auth, gallery.getManageGallery);
-router.post("/manage-gallery", auth, gallery.postManageGallery);
-
-// Faculty
-router.get("/add-faculty", auth, faculty.getFaculty);
-router.post("/add-faculty", auth, faculty.postFaculty);
-router.get("/manage-faculty", auth, faculty.getManageFaculty);
-router.post("/manage-faculty", auth, faculty.postManageFaculty);
-
-// Pages
-
-// Home
+// Home Page Routes
 router.get("/home", auth, home.getHome);
 router.post("/home", auth, home.postHome);
 
-// About
-router.get("/about", auth, about.getAbout);
-router.post("/about", auth, about.postAbout);
+// About Page Route
+router.get("/edit-about", auth, about.getAbout);
+router.post("/edit-about", auth, about.postAbout);
 
-// History
-router.get("/history", auth, history.getHistory);
-router.post("/history", auth, history.postHistory);
+// Contact Page Routes
+router.get("/edit-contact", auth, contact.getContact);
+router.post("/edit-contact", auth, contact.postContact);
 
-// Achievement
-router.get("/achievement", auth, achievement.getAchievement);
-router.post("/achievement", auth, achievement.postAchievement);
+// Programs Page Routes
+router.get("/add-program", auth, programs.getAddProgram);
+router.post("/add-program", auth, uploadProgram.programUploads, programs.postAddProgram);
+router.get("/manage-program", auth, programs.getManageProgram);
+router.post("/delete-program/:id", auth, programs.deleteProgram);
+router.get("/edit-program/:id", auth, programs.getEditProgram);
+router.post("/edit-program/:id", auth, uploadProgram.programUploads, programs.postEditProgram);
+router.get("/view-program/:id", auth, programs.viewProgram);
 
-// Contact
-router.get("/contact", auth, contact.getContact);
-router.post("/contact", auth, contact.postContact);
 
-// Admission
-router.get("/announce-admission", auth, admission.getAnnounceAdmission);
-router.post("/announce-admission", auth, admission.postAnnounceAdmission);
-router.get("/view-applicant", auth, admission.getViewApplicant);
-router.post("/view-applicant", auth, admission.postViewApplicant);
-router.get("/mail-applicant", auth, admission.getMailApplicant);
-router.post("/mail-applicant", auth, admission.postMailApplicant);
+// Projects Page Routes
+router.get("/add-project", auth, projects.getAddProject);
+router.post("/add-project", auth, projects.postAddProject);
+router.get("/manage-project", auth, projects.getManageProject);
+router.post("manage-project", auth, projects.postManageProject);
 
-// Testimony
-router.get("/add-testimony", auth, testimony.getAddTestimony);
-router.post("/add-testimony", auth, testimony.postAddTestimony);
-router.get("/manage-testimony", auth, testimony.getManageTestimony);
-router.post("/manage-testimony", auth, testimony.postManageTestimony);
+// Testimonial Routes
+router.get("/add-testimonial", auth, testimonial.getAddTestimonial);
+router.post("/add-testimonial", auth, testimonial.postAddTestimonial);
+router.get("/manage-testimonials", auth, testimonial.getManageTestimonial);
+router.post("/manage-testimonials", auth, testimonial.postManageTestimonial);
 
-// Enquiry
-router.get("/view-enquiry", auth, enquiry.getViewEnquiry);
-router.post("/view-enquiry", auth, enquiry.postViewEnquiry);
-router.get("/reply-enquiry", auth, enquiry.getReplyEnquiry);
-router.post("/reply-enquiry", auth, enquiry.postReplyEnquiry);
+// Upload Documents Routes
+router.get("/add-document", auth, documents.getAddDocument);
+router.post("/add-document", auth, documents.postAddDocument);
+router.get("/manage-document", auth, documents.getManageDocument);
+router.post("/manage-document", auth, documents.postManageDocument);
 
-// Settings
-router.get("/home-banner", auth, settings.getHomeBanner);
-router.post("/home-banner", auth, settings.postHomeBanner);
-router.get("/other-settings", auth, settings.getOtherSettings);
-router.post("/other-settings", auth, settings.postOtherSettings);
+// News Routes
+router.get("/add-news", auth, news.getAddNews);
+router.post("/add-news", auth, news.postAddNews);
+router.get("/manage-news", auth, news.getManageNews);
 
-// Profile
+// Leadership Routes
+router.get("/add-leader", auth, leader.getAddLeader);
+router.post("/add-leader", auth, leader.postAddLeader);
+router.get("/manage-leaders", auth, leader.getManageLeader);
+router.post("/manage-leaders", auth, leader.postManageLeader);
+
+// Partners Routes
+router.get("/add-partner", auth, partner.getPartner);
+router.post("/add-partner", auth, partner.postPartner);
+router.get("/manage-partners", auth, partner.getManagePartner);
+router.post("/manage-partners", auth, partner.postManagePartner);
+
+// Donation Routes
+router.get("/manage-donations", auth, donation.getDonation);
+router.post("/manage-donations", auth, donation.postDonation);
+
+// Headquarters Routes
+router.get("/edit-hq", auth, hq.getHeadQuarters);
+router.post("/edit-hq", auth, hq.postHeadQuarters);
+
+// Message Routes
+router.get("/messages", auth, message.getMessage);
+router.post("/messages", auth, message.postMessage);
+
+// Settings Routes
+router.get("/settings", auth, settings.getSiteSettings);
+router.post("/settings", auth, settings.postSiteSettings);
+
+// Profile Routes
 router.get("/user-profile", auth, profile.getViewProfile);
 router.post("/user-profile", auth, profile.postViewProfile);
 router.get("/edit-profile", auth, profile.getEditProfile);
-router.post("/edit-profile", auth, profile.postEditProfile);
+router.post(
+  "/edit-profile",
+  auth,
+  userProfileUpload.single("profileImage"),
+  profile.postEditProfile
+);
 
-// Logout
+// Logout Route
 router.get("/logout", logout.logout);
 
 module.exports = router;

@@ -14,13 +14,13 @@
     <div class="bg-light rounded p-4">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="mb-0">My Profile</h4>
-        <a href="/admin/edit-profile" class="btn btn-primary">Update Profile</a>
+        <a href="/admin/edit-profile" class="btn btn-success">Update Profile</a>
       </div>
 
       <div class="row">
         <div class="col-md-4 text-center">
           <img
-            src="<%= baseURL %>/admin/img/user.jpg"
+            src="/uploads/profile/<%= admin.profile_picture %>"
             class="img-thumbnail rounded-circle mb-3"
             style="width: 150px; height: 150px"
             alt="Profile Picture"
@@ -32,23 +32,23 @@
             <tbody>
               <tr>
                 <th scope="row" style="width: 30%">Full Name</th>
-                <td>John Doe</td>
+                <td><%= admin.name %></td>
               </tr>
               <tr>
                 <th scope="row">Username</th>
-                <td>admin_john</td>
+                <td><%= admin.username %></td>
               </tr>
               <tr>
                 <th scope="row">Email</th>
-                <td>admin@example.com</td>
+                <td><%= admin.email %></td>
               </tr>
               <tr>
                 <th scope="row">Phone</th>
-                <td>+231-77-000-000</td>
+                <td><%= admin.phone %></td>
               </tr>
               <tr>
                 <th scope="row">Joined</th>
-                <td>March 15, 2024</td>
+                <td><%= admin.created_at %></td>
               </tr>
             </tbody>
           </table>

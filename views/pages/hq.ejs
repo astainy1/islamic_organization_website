@@ -1,0 +1,151 @@
+<%- include("../partials/header.ejs") %>
+
+<!-- Hero Section -->
+<section
+  class="hero-wrap hero-wrap-2"
+  style="background-image: url('/images/bg_1.jpg')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div
+      class="row no-gutters slider-text align-items-center justify-content-center"
+    >
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread">Headquarters</h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"
+            ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
+          ></span>
+          <span>Headquarters <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Headquarters Info -->
+<section class="ftco-section">
+  <div class="container">
+    <!-- Intro -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Our Central Hub for Faith and Community Leadership</h2>
+        <p class="lead">
+          The headquarters of the Higher Lajinah for Islamic Affairs serves as
+          the nerve center for all national activities, administration,
+          religious coordination, and community development projects.
+        </p>
+      </div>
+    </div>
+
+    <!-- Details + Image -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 ftco-animate">
+        <h4 class="mb-3">Location & Contact</h4>
+        <p>
+          <strong>Address:</strong> Caldwell Junction, Duala, Bushrod Island,
+          Monrovia – Liberia
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+2317773929210">+231 777 3929 210</a>
+        </p>
+        <p>
+          <strong>WhatsApp:</strong>
+          <a
+            href="https://wa.me/231770167961?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20services"
+            target="_blank"
+            >+231 777 4921 000</a
+          >
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:info@higherlajinah.org">info@higherlajinah.org</a>
+        </p>
+        <p><strong>Office Hours:</strong> Monday – Friday, 9:00am – 4:00pm</p>
+        <a
+          href="<%= baseURL %>/contact"
+          class="btn btn-success mt-3 mb-4 md-mb-0"
+          >Get in Touch</a
+        >
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <img
+          src="/images/headquarters-building.jpg"
+          alt="Headquarters"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+    </div>
+
+    <!-- Departments -->
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate">
+        <h4 class="mb-4">Departments Located at HQ</h4>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="bg-light p-3 rounded shadow-sm h-100">
+              <h6 class="text-success">Religious Affairs</h6>
+              <p class="mb-0">
+                Oversees mosque support, religious education, and interfaith
+                harmony.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="bg-light p-3 rounded shadow-sm h-100">
+              <h6 class="text-primary">Social Welfare</h6>
+              <p class="mb-0">
+                Handles community relief, orphan sponsorship, and food
+                distribution.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="bg-light p-3 rounded shadow-sm h-100">
+              <h6 class="text-danger">Administrative Secretariat</h6>
+              <p class="mb-0">
+                Responsible for logistics, correspondence, and national
+                coordination.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map Embed -->
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate">
+        <h4 class="mb-4">Find Us on the Map</h4>
+        <div class="map-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.9551444953889!2d-10.78443371470705!3d6.368017337192555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf09f9ee3e20f131%3A0xaecf2c989e0c150e!2sCaldwell%20Junction!5e0!3m2!1sen!2s!4v1747908847270!5m2!1sen!2s"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional CTA -->
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center ftco-animate">
+        <h4 class="mb-3">Visit Us, Connect With Us</h4>
+        <p class="text-muted">
+          Our doors are open to all who wish to partner, volunteer, or learn
+          more about our mission. May Allah guide and accept your efforts.
+        </p>
+        <a href="<%= baseURL %>/contact" class="btn btn-success px-4 py-2"
+          >Reach the Office</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

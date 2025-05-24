@@ -1,0 +1,112 @@
+<%- include("../partials/header.ejs") %>
+
+<!-- Hero Banner -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 text-center ftco-animate">
+        <h1 class="mb-2 bread">Make a Donation</h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>
+          <span>Support Us <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Donation Form -->
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-3">Support Our Cause</h2>
+        <p class="lead">Your donation makes a direct impact on mosque upkeep, Islamic education, orphans, and feeding programs. May Allah reward your giving abundantly.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow p-4 border-0 rounded-lg">
+          <form  method="POST">
+            <!-- Amount -->
+            <div class="form-group mb-3">
+              <label for="amount" class="font-weight-bold">Donation Amount (USD)</label>
+              <input type="number" id="amount" name="amount" class="form-control" required min="1" placeholder="e.g. 50" />
+            </div>
+
+            <!-- Purpose -->
+            <div class="form-group mb-3">
+              <label for="purpose" class="font-weight-bold">Donation Type</label>
+              <select id="purpose" name="purpose" class="form-control" required>
+                <option disabled selected>Select a purpose</option>
+                <option value="zakat">Zakat</option>
+                <option value="sadaqah">Sadaqah</option>
+                <option value="mosque">Mosque Renovation</option>
+                <option value="feeding">Ramadan Feeding</option>
+                <option value="education">Islamic Education</option>
+                <option value="orphans">Orphan Support</option>
+              </select>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group mb-3">
+              <label for="fullname" class="font-weight-bold">Your Name</label>
+              <input type="text" id="fullname" name="fullname" class="form-control" required placeholder="e.g. Ahmad Musa" />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="email" class="font-weight-bold">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="e.g. ahmad@example.com" />
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group mb-4">
+              <label class="font-weight-bold">Payment Method</label>
+              <div class="d-flex flex-wrap gap-2">
+                <div class="form-check mr-3">
+                  <input class="form-check-input" type="radio" name="paymentMethod" value="visa" id="visa" required />
+                  <label class="form-check-label" for="visa">Visa</label>
+                </div>
+                <div class="form-check mr-3">
+                  <input class="form-check-input" type="radio" name="paymentMethod" value="paypal" id="paypal" />
+                  <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+                <div class="form-check mr-3">
+                  <input class="form-check-input" type="radio" name="paymentMethod" value="momo" id="momo" />
+                  <label class="form-check-label" for="momo">Mobile Money</label>
+                </div>
+              </div>
+            </div>
+<div class="form-group form-check">
+  <input type="checkbox" class="form-check-input" id="termsCheck" required />
+  <label class="form-check-label small text-muted" for="termsCheck">
+    I agree to the 
+    <a href="#" data-toggle="modal" data-target="#termsModal">Terms & Conditions</a> and 
+    <a href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>
+  </label>
+</div>
+
+            <!-- Submit -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-success btn-block py-2 px-4" onsubmit="alert('Coming Soon! This page is still under development.')">
+                <i class="fas fa-hand-holding-heart mr-2"></i> Donate Securely
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transparency Info -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-10 text-center">
+        <p class="small text-muted">Your contribution is securely processed. 100% of donations go to verified community initiatives. View our <a href="<%= baseURL %>/donation-transparency" class="text-success font-weight-bold">Donation Impact Report</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,33 +1,104 @@
 <%- include("../partials/header.ejs") %>
 
-<section
-  class="hero-wrap hero-wrap-2"
-  style="background-image: url('images/bg_1.jpg')"
->
+<!-- Hero Section -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
   <div class="overlay"></div>
   <div class="container">
-    <div
-      class="row no-gutters slider-text align-items-center justify-content-center"
-    >
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate text-center">
-        <h1 class="mb-2 bread">Programs Page</h1>
+        <h1 class="mb-2 bread">Our Programs</h1>
         <p class="breadcrumbs">
-          <span class="mr-2"
-            ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
-          ></span>
-          <span>Programs Page <i class="ion-ios-arrow-forward"></i></span>
+          <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>
+          <span>Programs <i class="ion-ios-arrow-forward"></i></span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="ftco-section ftco-no-pt ftc-no-pb">
+<!-- Programs Section -->
+<section class="ftco-section">
   <div class="container">
+    <!-- Section Intro -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Empowering Through Faith & Knowledge</h2>
+        <p>Our programs are designed to serve the spiritual, educational, and humanitarian needs of the Muslim community across Liberia. Explore our key offerings below.</p>
+      </div>
+    </div>
 
-      <h1 class="text-center p-5">Programs Page</h1>
+    <!-- Program Cards Grid -->
+    <div class="row">
+      <!-- Program 1 -->
+      <div class="col-md-4 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/quran-class.jpeg" class="img-fluid rounded mb-3 object-cover" alt="Quranic Studies">
+          <h5>Qur’anic Studies</h5>
+          <p class="small">Memorization, recitation (Tajweed), and Tafsir classes led by qualified instructors.</p>
+          <a href="<%= baseURL %>/program-details" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
 
+      <!-- Program 2 -->
+      <div class="col-md-4 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/fiqh-class.jpeg" class="img-fluid rounded mb-3" alt="Fiqh & Hadith">
+          <h5>Islamic Jurisprudence & Hadith</h5>
+          <p class="small">Learn the rulings of Islamic law and study Hadith for practical application in daily life.</p>
+          <a href="<%= baseURL %>/program-details" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Program 3 -->
+      <div class="col-md-4 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/blog_2.jpeg" class="img-fluid rounded mb-3" alt="Arabic Language">
+          <h5>Arabic Language</h5>
+          <p class="small">Foundational Arabic classes to read and understand the Qur’an and classical texts.</p>
+          <a href="<%= baseURL %>/program-details" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Program 4 -->
+      <div class="col-md-4 ftco-animate mt-4">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/quran-class.jpeg" class="img-fluid rounded mb-3" alt="Scholarships">
+          <h5>Scholarship Assistance</h5>
+          <p class="small">Educational support for orphaned and underprivileged Muslim students in need.</p>
+          <a href="<%= baseURL %>/program-details" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Program 5 -->
+      <div class="col-md-4 ftco-animate mt-4">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/composition.jpg" class="img-fluid rounded mb-3" alt="Quran Competition">
+          <h5>Qur’an Recitation Competitions</h5>
+          <p class="small">Annual contests that encourage youth to excel in Qur’anic memorization and recitation.</p>
+          <a href="<%= baseURL %>/program-details" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Program 6 -->
+      <div class="col-md-4 ftco-animate mt-4">
+        <div class="project-box border p-4 rounded h-100 shadow-sm text-center">
+          <img src="/images/ramadan_feeding.jpeg" class="img-fluid rounded mb-3" alt="Hajj and Umrah Support">
+          <h5>Hajj & Umrah Credentialing</h5>
+          <p class="small">Providing official endorsements, education, and prep for pilgrims traveling to Makkah.</p>
+          <a href="<%= baseURL %>/programs-detail" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8 text-center ftco-animate">
+        <h3>Looking to Enroll or Support?</h3>
+        <p>Whether you’re seeking Islamic knowledge or want to support the next generation of scholars, your involvement matters.</p>
+        <a href="<%= baseURL %>/contact" class="btn btn-success px-4 py-2 mr-2">Join a Program</a>
+        <a href="<%= baseURL %>/donate" class="btn btn-outline-primary px-4 py-2">Donate Now</a>
+      </div>
+    </div>
   </div>
 </section>
 

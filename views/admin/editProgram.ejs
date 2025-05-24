@@ -1,0 +1,93 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light p-4 rounded">
+      <h4 class="mb-4 text-success">Edit Program</h4>
+      <form action="/admin/edit-program/<%= program.id %>" method="POST" enctype="multipart/form-data">
+        <div class="row g-3">
+          <!-- Title -->
+          <div class="col-md-6">
+            <label class="form-label">Program Title</label>
+            <input type="text" class="form-control" name="title" value="<%= program.title %>" required>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-6">
+            <label class="form-label">Summary</label>
+            <input type="text" class="form-control" name="summary" value="<%= program.summary %>">
+          </div>
+
+          <!-- Description -->
+          <div class="col-md-12">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="5"><%= program.description %></textarea>
+          </div>
+
+          <!-- Audience & Location -->
+          <div class="col-md-6">
+            <label class="form-label">Target Audience</label>
+            <input type="text" class="form-control" name="target_audience" value="<%= program.target_audience %>">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" name="location" value="<%= program.location %>">
+          </div>
+
+          <!-- Frequency & Duration -->
+          <div class="col-md-6">
+            <label class="form-label">Frequency</label>
+            <input type="text" class="form-control" name="frequency" value="<%= program.frequency %>">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Duration</label>
+            <input type="text" class="form-control" name="duration" value="<%= program.duration %>">
+          </div>
+
+          <!-- Testimonial -->
+          <div class="col-md-6">
+            <label class="form-label">Testimonial</label>
+            <textarea class="form-control" name="testimonial"><%= program.testimonial %></textarea>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Testimonial By</label>
+            <input type="text" class="form-control" name="testimonial_by" value="<%= program.testimonial_by %>">
+          </div>
+
+          <!-- Video URL -->
+          <div class="col-md-12">
+            <label class="form-label">YouTube Video URL</label>
+            <input type="url" class="form-control" name="video_url" value="<%= program.video_url %>">
+          </div>
+
+          <!-- File Uploads -->
+          <div class="col-md-6">
+            <label class="form-label">Hero Image</label>
+            <input type="file" name="hero_image" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Cover Image</label>
+            <input type="file" name="cover_image" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Program PDF</label>
+            <input type="file" name="pdf" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Gallery Images</label>
+            <input type="file" name="gallery" class="form-control" multiple>
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 mt-4 text-end">
+            <button type="submit" class="btn btn-success px-4">Update Program</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>

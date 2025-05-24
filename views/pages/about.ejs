@@ -1,8 +1,9 @@
 <%- include("../partials/header.ejs") %>
 
+<!-- Page Header / Breadcrumb -->
 <section
   class="hero-wrap hero-wrap-2"
-  style="background-image: url('images/bg_1.jpg')"
+  style="background-image: url('images/bg_1.jpg'); background-size: cover"
 >
   <div class="overlay"></div>
   <div class="container">
@@ -15,19 +16,150 @@
           <span class="mr-2"
             ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
           ></span>
-          <span>About us <i class="ion-ios-arrow-forward"></i></span>
+          <span>About Us <i class="ion-ios-arrow-forward"></i></span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- About Main Section -->
 <section class="ftco-section ftco-no-pt ftc-no-pb">
   <div class="container">
+    <!-- Intro -->
+    <div class="row justify-content-center mb-5 mt-5">
+      <div class="col-md-10 text-center heading-section ftco-animate mt-5">
+        <h2 class="mb-4">Who We Are</h2>
+        <p class="lead">
+          <strong>Higher Lajinah for Islamic Affairs</strong> is a leading
+          Islamic organization in Liberia dedicated to religious education,
+          social empowerment, and spiritual development. We aim to uplift the
+          Ummah through structured programs, community outreach, and leadership
+          rooted in the Qur’an and Sunnah.
+        </p>
+      </div>
+    </div>
 
-      <h1 class="text-center p-5">About Page</h1>
+    <!-- History & Purpose -->
+    <div class="row mb-5">
+      <div class="col-md-6 ftco-animate">
+        <h3 class="mb-3">Our History</h3>
+        <p>
+          Founded by committed scholars and leaders, Higher Lajinah was
+          established to respond to the growing spiritual and societal needs of
+          Muslims in Liberia. Since our inception, we have expanded our reach
+          through mosque renovation projects, Ramadan feeding programs, and
+          partnerships with government and international bodies.
+        </p>
+        <p>
+          From modest beginnings to becoming a trusted Islamic body, we remain
+          guided by sincerity, scholarship, and service.
+        </p>
 
+        <!-- <div>
+          <a
+            href="/uploads/documents/constitution.pdf"
+            class="btn btn-outline-success d-block"
+            >Download</a
+          >
+        </div> -->
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <img
+          src="/images/higher-lajinah.jpg"
+          alt="About Image"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="row mb-5">
+      <div class="col-md-6 ftco-animate">
+        <div class="bg-light p-4 rounded h-100">
+          <h3 class="mb-3">Our Mission</h3>
+          <p>
+            To promote Islamic values through education, advocacy, humanitarian
+            efforts, and institutional leadership — serving as a trusted
+            religious authority and a bridge between communities.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <div class="bg-white p-4 rounded border h-100">
+          <h3 class="mb-3">Our Vision</h3>
+          <p>
+            To be a central pillar of Islamic leadership in Liberia — inspiring
+            unity, nurturing faith, and advancing the well-being of the Muslim
+            Ummah through Quranic guidance and prophetic wisdom.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate text-center">
+        <h3 class="mb-4">Our Core Values</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="p-3 border rounded">
+              <i class="fas fa-quran fa-2x text-success mb-3"></i>
+              <h5>Faith</h5>
+              <p>
+                Guided by the Qur’an and Sunnah in every decision and
+                initiative.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 border rounded">
+              <i class="fas fa-scale-balanced fa-2x text-primary mb-3"></i>
+              <h5>Integrity</h5>
+              <p>
+                We uphold justice, transparency, and moral leadership in our
+                work.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 border rounded">
+              <i class="fas fa-hands-helping fa-2x text-warning mb-3"></i>
+              <h5>Service</h5>
+              <p>Serving others with compassion, humility, and purpose.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 border rounded">
+              <i class="fas fa-people-group fa-2x text-danger mb-3"></i>
+              <h5>Unity</h5>
+              <p>
+                We build community and collaboration among Muslims and beyond.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="row justify-content-center text-center mt-4 mb-5">
+      <div class="col-md-8 ftco-animate">
+        <h3>Explore Our Work</h3>
+        <p>
+          Learn more about how we serve the Muslim community of Liberia — and
+          how you can be part of this journey.
+        </p>
+        <a href="<%= baseURL %>/programs" class="btn btn-success px-4 py-2 mr-2"
+          >View Our Programs</a
+        >
+        <a
+          href="<%= baseURL %>/donate"
+          class="btn btn-outline-success px-4 py-2"
+          >Support Our Mission</a
+        >
+      </div>
+    </div>
   </div>
 </section>
 

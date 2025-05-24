@@ -1,29 +1,33 @@
 /********** Template CSS **********/
 :root {
-  --primary: #05a30a;
-  --light: #edeef8;
+  --primary: green;
+  --light: green;
   --dark: #191c24;
 }
 
+.sidebar-nav {
+  background: green;
+  color: #fff;
+}
 .bg-light-full {
-  background: #f0f2fb;
+  background: #f8f8f8;
 }
 .btn-primary {
   color: #fff;
-  background: #05a30a;
+  background: green;
 }
 .text-primary-full {
-  color: #05a30a;
+  color: green;
 }
 a {
   color: #05a30a;
 }
 
 .top-navbar {
-  border-bottom: 2px solid #05a30a;
+  border-bottom: 2px solid green;
 }
 .dropdown-menu a:hover {
-  background: #05a30a;
+  background: green;
   color: #fff;
   border-radius: 0;
 }
@@ -152,7 +156,8 @@ a {
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
   padding: 7px 20px;
-  color: var(--dark);
+  /* color: var(--dark); */
+  color: white;
   font-weight: 500;
   border-left: 3px solid var(--light);
   border-radius: 0 30px 30px 0;
@@ -173,12 +178,14 @@ a {
   align-items: center;
   justify-content: center;
   background: #ffffff;
+  color: green;
   border-radius: 40px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
   background: var(--light);
+  color: white;
 }
 
 .sidebar .navbar .dropdown-toggle::after {
@@ -221,6 +228,7 @@ a {
   align-items: center;
   justify-content: center;
   background: #ffffff;
+  color: green;
   border-radius: 40px;
 }
 

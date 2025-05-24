@@ -1,0 +1,72 @@
+<%- include("../partials/header.ejs") %>
+
+<!-- Hero Section -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread"><%= project.title %></h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>
+          <span><a href="/project">Projects</a> <i class="ion-ios-arrow-forward"></i></span>
+          <span><%= project.title %> <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Details Section -->
+<section class="ftco-section">
+  <div class="container">
+    <div class="row mb-5">
+      <!-- Project Image -->
+      <div class="col-md-6 ftco-animate">
+        <img src="<%= project.imageURL %>" alt="<%= project.title %>" class="img-fluid rounded shadow">
+      </div>
+
+      <!-- Project Info -->
+      <div class="col-md-6 ftco-animate">
+        <h2><%= project.title %></h2>
+        <p class="text-muted"><i class="fa fa-calendar-alt mr-2"></i><%= project.date %></p>
+        <p class="text-muted"><i class="fa fa-map-marker-alt mr-2"></i><%= project.location %></p>
+
+        <p class="mt-3 lead"><%= project.summary %></p>
+
+        <% if (project.ongoing) { %>
+          <a href="<%= baseURL %>/donate" class="btn btn-success mt-4 px-4 py-2">
+            Support This Project
+          </a>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Full Description -->
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate">
+        <h4>Project Description</h4>
+        <p><%= project.description %></p>
+      </div>
+    </div>
+
+    <!-- Optional Gallery or Media -->
+    <% if (project.gallery && project.gallery.length > 0) { %>
+    <div class="row">
+      <div class="col-md-12 ftco-animate">
+        <h4>Gallery</h4>
+        <div class="row">
+          <% project.gallery.forEach(function(img) { %>
+            <div class="col-md-4 mb-3">
+              <a href="<%= img %>" data-lightbox="gallery"
+              data-title=""><img src="<%= img %>" class="img-fluid rounded"></a>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

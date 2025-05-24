@@ -1,0 +1,128 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<!-- Content Start -->
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Add New Program</h4>
+
+      <form
+        action="/admin/add-program"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+        id="programForm"
+      >
+        <div class="row g-3">
+          <!-- Title -->
+          <div class="col-md-6">
+            <label class="form-label">Program Title</label>
+            <input type="text" name="title" class="form-control" required />
+            <div class="invalid-feedback">Program title is required.</div>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-6">
+            <label class="form-label">Summary</label>
+            <input type="text" name="summary" class="form-control" required />
+            <div class="invalid-feedback">Summary is required.</div>
+          </div>
+
+          <!-- Description -->
+          <div class="col-md-12">
+            <label class="form-label">Full Description</label>
+            <textarea name="description" class="form-control" rows="5" required></textarea>
+            <div class="invalid-feedback">Description is required.</div>
+          </div>
+
+          <!-- Target Audience -->
+          <div class="col-md-6">
+            <label class="form-label">Target Audience</label>
+            <input type="text" name="target_audience" class="form-control" required />
+          </div>
+
+          <!-- Location -->
+          <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" required />
+          </div>
+
+          <!-- Frequency -->
+          <div class="col-md-6">
+            <label class="form-label">Frequency</label>
+            <input type="text" name="frequency" class="form-control" required />
+          </div>
+
+          <!-- Duration -->
+          <div class="col-md-6">
+            <label class="form-label">Duration</label>
+            <input type="text" name="duration" class="form-control" required />
+          </div>
+
+          <!-- Video -->
+          <div class="col-md-12">
+            <label class="form-label">YouTube Video URL (optional)</label>
+            <input type="url" name="video_url" class="form-control" />
+          </div>
+
+          <!-- Testimonial -->
+          <div class="col-md-8">
+            <label class="form-label">Testimonial</label>
+            <textarea name="testimonial" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Testimonial By</label>
+            <input type="text" name="testimonial_by" class="form-control" />
+          </div>
+
+          <!-- File Uploads -->
+          <div class="col-md-6">
+            <label class="form-label">Hero Image (top banner)</label>
+            <input type="file" name="hero_image" accept="image/*" class="form-control" required />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Cover Image (program section)</label>
+            <input type="file" name="cover_image" accept="image/*" class="form-control" required />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Program PDF (optional)</label>
+            <input type="file" name="pdf" accept="application/pdf" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Gallery Images (Max: 5)</label>
+            <input
+              type="file"
+              name="gallery"
+              accept="image/*"
+              class="form-control"
+              id="galleryInput"
+              multiple
+              required
+            />
+            <div class="form-text text-danger small d-none" id="galleryWarning">
+              You can only upload up to 5 images.
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-success px-5">Save Program</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>
+
+  <!-- Validation Script -->
+ 
+

@@ -1,5 +1,5 @@
-<%- include("../partials/adminheader.ejs") %> <%- include("./menu/sidebar.ejs")
-%>
+<%- include("../partials/adminheader.ejs") %> 
+<%- include("./menu/sidebar.ejs") %>
 
 <!-- Content Start -->
 <div class="content">
@@ -7,106 +7,76 @@
   <%- include("./menu/navbar.ejs") %>
   <!-- Navbar End -->
 
-  <!-- School info start -->
+  <!-- Organization Info Start -->
   <div class="container-fluid pt-4 px-4">
-    <div
-      class="bg-light-full rounded d-flex flex-column flex-md-row align-items-center justify-content-between p-4"
-    >
+    <div class="bg-light-full rounded d-flex flex-column flex-md-row align-items-center justify-content-between p-4">
       <div class="d-flex align-items-center mb-3 mb-md-0">
         <img
           src="<%= baseURL %>/admin/img/logo.png"
-          alt="School Logo"
+          alt="HLIA Logo"
           class="me-3"
           style="width: 60px; height: 60px; object-fit: cover"
         />
         <div>
-          <h4 class="mb-0">Salem Bakhit High School</h4>
-          <small class="text-muted">"Empowering Future Leaders"</small>
+          <h4 class="mb-0">Higher Lajinah for Islamic Affairs (HLIA)</h4>
+          <small class="text-muted">"Empowering Faith, Leadership, and Unity"</small>
         </div>
       </div>
-
       <div class="text-center text-md-end">
         <p class="mb-1">
-          <i class="fa fa-map-marker-alt me-2 text-primary-full"></i>Caldwell
-          Junction, Monrovia, Liberia
+          <i class="fa fa-map-marker-alt me-2 text-success"></i>Caldwell Junction, Monrovia, Liberia
         </p>
         <p class="mb-1">
-          <i class="fa fa-envelope me-2 text-primary-full"></i
-          >info@salembakhitschool.edu.lr
+          <i class="fa fa-envelope me-2 text-success"></i>info@lajinahliberia.org
         </p>
         <p class="mb-0">
-          <i class="fa fa-phone-alt me-2 text-primary-full"></i>+231 77 777 7777
+          <i class="fa fa-phone-alt me-2 text-success"></i>+231 777 3929210
         </p>
       </div>
     </div>
   </div>
-  <!-- School info end -->
+  <!-- Organization Info End -->
 
-  <!-- Summary Cards -->
+  <!-- Summary Cards Start -->
   <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
-      <div class="col-sm-6 col-xl-3">
-        <div
-          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
-        >
-          <i class="fa fa-school fa-3x text-primary-full"></i>
-          <div class="ms-3">
-            <p class="mb-2">Classes</p>
-            <h6 class="mb-0">12</h6>
-          </div>
-        </div>
-      </div>
+      <% const metrics = [
+        { icon: 'fa-book-open', label: 'Programs', count: 12 },
+        { icon: 'fa-project-diagram', label: 'Projects', count: 14 },
+        { icon: 'fa-folder-open', label: 'Documents', count: 11 },
+        { icon: 'fa-user-shield', label: 'Leadership', count: 6 },
+        { icon: 'fa-comment-dots', label: 'Testimonials', count: 8 },
+        { icon: 'fa-photo-video', label: 'Media', count: 20 },
+        { icon: 'fa-handshake', label: 'Partners', count: 4 },
+        { icon: 'fa-bullhorn', label: 'Announcements', count: 5 }
+      ]; %>
 
-      <div class="col-sm-6 col-xl-3">
-        <div
-          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
-        >
-          <i class="fa fa-book fa-3x text-primary-full"></i>
-          <div class="ms-3">
-            <p class="mb-2">Subjects</p>
-            <h6 class="mb-0">14</h6>
+      <% metrics.forEach(m => { %>
+        <div class="col-sm-6 col-xl-3">
+          <div class="bg-light-full rounded d-flex align-items-center justify-content-between p-4">
+            <i class="fas <%= m.icon %> fa-3x text-success"></i>
+            <div class="ms-3">
+              <p class="mb-2"><%= m.label %></p>
+              <h6 class="mb-0"><%= m.count %></h6>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-sm-6 col-xl-3">
-        <div
-          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
-        >
-          <i class="fa fa-chalkboard-teacher fa-3x text-primary-full"></i>
-          <div class="ms-3">
-            <p class="mb-2">Teachers</p>
-            <h6 class="mb-0">11</h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-xl-3">
-        <div
-          class="bg-light-full rounded d-flex align-items-center justify-content-between p-4"
-        >
-          <i class="fa fa-user-shield fa-3x text-primary-full"></i>
-          <div class="ms-3">
-            <p class="mb-2">Administrators</p>
-            <h6 class="mb-0">12</h6>
-          </div>
-        </div>
-      </div>
+      <% }); %>
     </div>
   </div>
+  <!-- Summary Cards End -->
 
-  <!-- Calendar & Map -->
+  <!-- Calendar & Map Section -->
   <div class="container-fluid pt-4 px-4 overflow-hidden">
     <div class="row g-4">
       <div class="col-sm-12 col-md-6">
         <div class="h-100 bg-light rounded p-4">
           <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Calendar</h6>
+            <h6 class="mb-0">Organization Calendar</h6>
           </div>
           <div id="calender"></div>
         </div>
       </div>
-
       <div class="col-sm-12 col-md-6">
         <div class="bg-light rounded h-100 p-4">
           <iframe
@@ -125,4 +95,4 @@
 
   <!-- Footer -->
   <%- include("../partials/adminfooter.ejs") %>
-</div>
+

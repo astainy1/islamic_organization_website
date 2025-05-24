@@ -1,0 +1,73 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Add New Project</h4>
+
+      <form action="/admin/add-project" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="row g-3">
+          <!-- Title -->
+          <div class="col-md-6">
+            <label class="form-label">Project Title</label>
+            <input type="text" name="title" class="form-control" required />
+          </div>
+
+          <!-- Location -->
+          <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" required />
+          </div>
+
+          <!-- Date -->
+          <div class="col-md-6">
+            <label class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" required />
+          </div>
+
+          <!-- Ongoing -->
+          <div class="col-md-6">
+            <label class="form-label">Is this an ongoing project?</label>
+            <select name="ongoing" class="form-control" required>
+              <option value="1">Yes</option>
+              <option value="0" selected>No</option>
+            </select>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-12">
+            <label class="form-label">Summary</label>
+            <textarea name="summary" class="form-control" rows="2" required></textarea>
+          </div>
+
+          <!-- Description -->
+          <div class="col-md-12">
+            <label class="form-label">Full Description</label>
+            <textarea name="description" class="form-control" rows="5" required></textarea>
+          </div>
+
+          <!-- Cover Image -->
+          <div class="col-md-6">
+            <label class="form-label">Cover Image</label>
+            <input type="file" name="cover_image" accept="image/*" class="form-control" required />
+          </div>
+
+          <!-- Gallery -->
+          <div class="col-md-6">
+            <label class="form-label">Gallery Images (up to 5)</label>
+            <input type="file" name="gallery" accept="image/*" class="form-control" multiple />
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-success px-5">Save Project</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>

@@ -5,7 +5,7 @@ const flash = require("connect-flash");
 exports.getLogin = (req, res) => {
   // console.log('Admin route')
   res.render("admin/login", {
-    title: "Login | Salem Bakhit High School",
+    title: "Login",
   });
 };
 
@@ -54,7 +54,7 @@ exports.postLogin = (req, res) => {
       }
       if (match) {
         req.session.admin = admin;
-        req.flash("success", "Successfully Login!");
+        // req.flash("success", "Successfully Login!");
         return res.redirect(303, "/admin/dashboard");
       } else {
         req.flash("error", "Invalid Credentials");

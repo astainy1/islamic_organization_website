@@ -1,0 +1,164 @@
+<%- include("../partials/header.ejs") %>
+
+<!-- Hero Section -->
+<section
+  class="hero-wrap hero-wrap-2"
+  style="background-image: url('/images/bg_1.jpg')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div
+      class="row no-gutters slider-text align-items-center justify-content-center"
+    >
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread">Qur’anic Studies</h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"
+            ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
+          ></span>
+          <span
+            ><a href="/programs">Programs</a>
+            <i class="ion-ios-arrow-forward"></i
+          ></span>
+          <span>Qur’anic Studies</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program Details -->
+<section class="ftco-section">
+  <div class="container">
+    <div class="row mb-5">
+      <!-- Image -->
+      <div class="col-md-6 ftco-animate">
+        <img
+          src="/images/quran-class.jpeg"
+          class="img-fluid rounded shadow"
+          alt="Qur’anic Studies"
+        />
+      </div>
+
+      <!-- Info -->
+      <div class="col-md-6 ftco-animate">
+        <h2 class="mb-3">Qur’anic Studies</h2>
+        <p class="lead">
+          Memorization, Tajweed, and Tafsir classes led by qualified
+          instructors.
+        </p>
+        <p>
+          Our Qur’anic Studies program helps students master proper recitation,
+          memorize selected surahs, and understand meanings through interactive
+          Tafsir classes. Open to all age groups.
+        </p>
+        <ul class="list-unstyled mb-3">
+          <li><strong>Target Audience:</strong> Children, Youth, Adults</li>
+          <li><strong>Location:</strong> Main Center, Caldwell Junction</li>
+          <li><strong>Frequency:</strong> Weekly (Evenings)</li>
+          <li><strong>Duration:</strong> Ongoing (Term-based)</li>
+        </ul>
+
+        <!-- Download PDF -->
+        <a
+          href="/docs/quranic-studies-info.pdf"
+          class="btn btn-outline-dark mr-2"
+          download
+        >
+          <i class="fas fa-file-download mr-1"></i> Download Program Info (PDF)
+        </a>
+
+        <!-- CTA -->
+        <a href="<%= baseURL %>/contact" class="btn btn-success mt-2">Join This Program</a>
+      </div>
+    </div>
+
+    <!-- Video Evidence -->
+    <div class="row my-5">
+      <div class="col-md-12 ftco-animate">
+        <h4 class="mb-4">Watch Our Students in Action</h4>
+        <div class="video-container">
+          <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/snUeLt75Xgs?si=uEkcZFt1bNWenBk2"
+            title="Qur'an Class Highlights"
+            allowfullscreen
+            
+          ></iframe>
+          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/snUeLt75Xgs?si=uEkcZFt1bNWenBk2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="row">
+      <div class="col-md-12 ftco-animate">
+        <h4 class="mb-4">Gallery</h4>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <a href="/images/economics.jpg" data-lightbox="gallery" >
+              <img
+                src="/images/economics.jpg"
+                class="img-fluid rounded"
+                alt="Recitation"
+              />
+            </a>
+          </div>
+          <div class="col-md-4 mb-3">
+            <a href="/images/ethics.jpg" data-lightbox="gallery">
+              <img
+                src="/images/ethics.jpg"
+                class="img-fluid rounded"
+                alt="Students"
+              />
+            </a>
+          </div>
+          <div class="col-md-4 mb-3">
+            <a href="/images/biology.jpg" data-lightbox="gallery">
+              <img
+                src="/images/biology.jpg"
+                class="img-fluid rounded"
+                alt="Learning Moment"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional Testimony -->
+    <div class="row my-5">
+      <div class="col-md-8 mx-auto ftco-animate text-center">
+        <blockquote class="blockquote p-4 border rounded bg-light">
+          <p class="mb-2">
+            "Through this Qur’anic program, my son has memorized five surahs in
+            just two months. May Allah bless this organization."
+          </p>
+          <footer class="blockquote-footer">Sister Amina, Parent</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="row justify-content-center text-center mt-5">
+      <div class="col-md-8 ftco-animate">
+        <h3>Want to Enroll or Support This Program?</h3>
+        <p>
+          Your contribution helps us provide Qur’anic education to even more
+          students, In Shaa Allah.
+        </p>
+        <a href="<%= baseURL %>/donate" class="btn btn-success px-4 py-2 mr-2"
+          >Support This Program</a
+        >
+        <a
+          href="<%= baseURL %>/contact"
+          class="btn btn-outline-primary px-4 py-2"
+          >Ask a Question</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

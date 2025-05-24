@@ -1,0 +1,122 @@
+<%- include("../partials/header.ejs") %>
+
+<section
+  class="hero-wrap hero-wrap-2"
+  style="background-image: url('images/bg_1.jpg')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div
+      class="row no-gutters slider-text align-items-center justify-content-center"
+    >
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread">Programs Page</h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"
+            ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
+          ></span>
+          <span>Programs Page <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+  <div class="container">
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center heading-section">
+            <h2 class="mb-4">Where Your Donations Go</h2>
+            <p>
+              Every contribution you make supports critical services that uplift
+              our community and fulfill Islamic duties like Zakat and Sadaqah.
+              Here's how your generosity makes a difference.
+            </p>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <!-- Category 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white shadow rounded">
+              <div class="mb-3">
+                <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
+              </div>
+              <h4>Helping the Needy</h4>
+              <p>
+                We provide food, clothing, and shelter support to
+                underprivileged families in our community.
+              </p>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white shadow rounded">
+              <div class="mb-3">
+                <i class="fas fa-mosque fa-2x text-success"></i>
+              </div>
+              <h4>Mosque Maintenance</h4>
+              <p>
+                Your donations help us maintain a clean and welcoming place for
+                worship, learning, and gathering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white shadow rounded">
+              <div class="mb-3">
+                <i class="fas fa-child fa-2x text-warning"></i>
+              </div>
+              <h4>Youth & Islamic Education</h4>
+              <p>
+                We fund Islamic education programs, Qur'an classes, and youth
+                development activities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white shadow rounded">
+              <div class="mb-3">
+                <i class="fas fa-hands-helping fa-2x text-info"></i>
+              </div>
+              <h4>Emergency Relief</h4>
+              <p>
+                We respond to urgent needs such as illness, accidents, and
+                community disasters with quick financial aid.
+              </p>
+            </div>
+          </div>
+
+          <!-- Category 5 -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white shadow rounded">
+              <div class="mb-3">
+                <i class="fas fa-globe-africa fa-2x text-danger"></i>
+              </div>
+              <h4>Community Development</h4>
+              <p>
+                Funds support sustainable projects like water wells, vocational
+                training, and skill-building workshops.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="<%= baseURL %>/donate" class="btn btn-success btn-lg"
+            >Support a Cause</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

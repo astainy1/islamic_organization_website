@@ -1,117 +1,263 @@
+
+<!-- Terms & Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src="<%= baseURL %>/terms" style="width: 100%; height: 70vh; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src="<%= baseURL %>/privacy" style="width: 100%; height: 70vh; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
 <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Caldwell Junction, Duala, Bushrod Island, Monrovia - Liberia</span></li>
-	                <li><a href="tel:07773929219"><span class="icon icon-phone"></span><span class="text">+231 777 3929 210</span></a></li>
-	                <li><a href="mailto:info@salembakhit.com"><span class="icon icon-envelope"></span><span class="text">info@salembakhit.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
+  <div class="container">
+    <div class="row mb-5">
+      <!-- Contact Info -->
+      <div class="col-md-6 col-lg-3">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Have a Question?</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li>
+                <span class="icon icon-map-marker"></span>
+                <span class="text">Caldwell Junction, Duala, Bushrod Island, Monrovia - Liberia</span>
+              </li>
+              <li>
+                <a href="tel:+2317773929210"><span class="icon icon-phone"></span><span class="text">+231 777 3929 210</span></a>
+              </li>
+              <li>
+                <a href="mailto:info@lajinahliberia.org"><span class="icon icon-envelope"></span><span class="text">info@lajinahliberia.org</span></a>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/blog_2.jpeg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Parenting with Purpose: Islamic Guidance</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> March 27, 2025</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-5 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/blog_1.jpeg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Ramadan Reflections from Our Students</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> May 27, 2024</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
+        </div>
+      </div>
+
+      <!-- Recent Blog -->
+      <div class="col-md-6 col-lg-3">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Recent Blog</h2>
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(images/blog_2.jpeg);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="#">Parenting with Purpose: Islamic Guidance</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> March 27, 2025</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2"> Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="/"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                <li><a href="<%= baseURL %>/about"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
-                <li><a href="<%= baseURL %>/staff"><span class="ion-ios-arrow-round-forward mr-2"></span>Projects</a></li>
-                <li><a href="<%= baseURL %>/administrators"><span class="ion-ios-arrow-round-forward mr-2"></span>Programs</a></li>
-                <li><a href="<%= baseURL %>/news"><span class="ion-ios-arrow-round-forward mr-2"></span>Media</a></li>
-              
-                <li><a href="<%= baseURL %>/contact"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Subscribe Us!</h2>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
-                </div>
-              </form>
-            </div>
-            <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
-            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
+          <div class="block-21 mb-5 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(images/blog_1.jpeg);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="#">Ramadan Reflections from Our Students</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> May 27, 2024</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
             </div>
           </div>
         </div>
-        
       </div>
-    </footer>
-    
-  
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#05a30a"/></svg></div>
+      <!-- Quick Links -->
+      <div class="col-md-6 col-lg-3">
+        <div class="ftco-footer-widget mb-5 ml-md-4">
+          <h2 class="ftco-heading-2">Quick Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="/"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+            <li><a href="<%= baseURL %>/about"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+            <li><a href="<%= baseURL %>/project"><span class="ion-ios-arrow-round-forward mr-2"></span>Projects</a></li>
+            <li><a href="<%= baseURL %>/programs"><span class="ion-ios-arrow-round-forward mr-2"></span>Programs</a></li>
+            <li><a href="<%= baseURL %>/media"><span class="ion-ios-arrow-round-forward mr-2"></span>Media</a></li>
+            <li><a href="<%= baseURL %>/contact"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+            <li><a href="<%= baseURL %>/terms-conditions"><span class="ion-ios-arrow-round-forward mr-2"></span>Terms & Conditions</a></li>
+            <li><a href="<%= baseURL %>/privacy-policy"><span class="ion-ios-arrow-round-forward mr-2"></span>Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Subscribe + Social -->
+      <div class="col-md-6 col-lg-3">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Subscribe Us!</h2>
+          <form action="#" class="subscribe-form">
+            <div class="form-group">
+              <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address" />
+              <input type="submit" value="Subscribe" class="form-control submit px-3" />
+            </div>
+          </form>
+        </div>
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="mb-0">
+          &copy; <%= new Date().getFullYear() %> Higher Lajinah for Islamic Affairs. All Rights Reserved. |
+          <a href="<%= baseURL %>/terms-conditions" class="text-white">Terms</a> |
+          <a href="<%= baseURL %>/privacy-policy" class="text-white">Privacy</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Mega Menu Starts -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const trigger = document.getElementById("megaMenuTrigger");
-    const menu = document.getElementById("megaMenu");
     const container = document.getElementById("megaMenuContainer");
+    const menu = document.getElementById("megaMenu");
+    const menuBtn = document.getElementById("megaMenuTrigger");
+
 
     let timeout;
 
-    // Show menu on mouseenter
+    // Show container when menuBtn is clicked.
+    menuBtn.addEventListener("click", () => {
+      container.classList.add("show");
+      menu.classList.add("show");
+    })
+
+    // Show when mouse enters the container (nav item)
     container.addEventListener("mouseenter", () => {
       clearTimeout(timeout);
+      container.classList.add("show");
       menu.classList.add("show");
     });
 
-    // Hide menu on mouseleave with a small delay
-    container.addEventListener("mouseleave", () => {
-      timeout = setTimeout(() => {
-        menu.classList.remove("show");
-      }, 5000); // 200ms delay improves UX
+    // Keep open when hovering over the dropdown
+    menu.addEventListener("mouseenter", () => {
+      clearTimeout(timeout);
+      container.classList.add("show");
+      menu.classList.add("show");
     });
 
-    // Optional: Keep menu open on focus
-    trigger.addEventListener("focus", () => menu.classList.add("show"));
-    trigger.addEventListener("blur", () => {
+    // Hide when mouse leaves both container and menu
+    container.addEventListener("mouseleave", () => {
       timeout = setTimeout(() => {
+        container.classList.remove("show");
         menu.classList.remove("show");
-      }, 5000);
+      }, 300);
+    });
+
+    menu.addEventListener("mouseleave", () => {
+      timeout = setTimeout(() => {
+        container.classList.remove("show");
+        menu.classList.remove("show");
+      }, 300);
+    });
+
+  });
+</script>
+<!-- Mega Menu Ends -->
+
+<!-- To Top Button -->
+<script>
+  // Show button on scroll
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "flex";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to top
+  document.getElementById("scrollTopBtn").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<!-- To Top Button -->
+
+<!-- PDF Preview Modal Starts -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">Preview Document</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <iframe id="pdfViewer" src="" width="100%" height="600px" style="border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Preview Document Modal Ends -->
+
+<!-- Preview Document - Script  Starts -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.getElementById("pdfViewer");
+    const label = document.getElementById("pdfModalLabel");
+    
+    document.querySelectorAll(".btn-preview").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const url = btn.getAttribute("data-pdf");
+        const title = btn.getAttribute("data-title") || "Preview Document";
+        if(!url){
+          viewer.innerHTML = `<h1> No File Availible! </h1>`
+          return;
+        }
+        viewer.src = url;
+        label.textContent = title;
+        $('#pdfModal').modal('show');
+      });
     });
   });
 </script>
+  <!-- Preview Document - Script Ends -->
+
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -124,9 +270,12 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/license.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script>
@@ -136,9 +285,6 @@
     once: true
   });
 </script>
-
-
-
     
   </body>
 </html>

@@ -1,30 +1,113 @@
 <%- include("../partials/header.ejs") %>
 
-<section
-  class="hero-wrap hero-wrap-2"
-  style="background-image: url('images/bg_1.jpg')"
->
+<!-- Page Banner -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
   <div class="overlay"></div>
   <div class="container">
-    <div
-      class="row no-gutters slider-text align-items-center justify-content-center"
-    >
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate text-center">
-        <h1 class="mb-2 bread">Project Page</h1>
+        <h1 class="mb-2 bread">Our Projects</h1>
         <p class="breadcrumbs">
-          <span class="mr-2"
-            ><a href="/">Home <i class="ion-ios-arrow-forward"></i></a
-          ></span>
-          <span>About us <i class="ion-ios-arrow-forward"></i></span>
+          <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>
+          <span>Projects <i class="ion-ios-arrow-forward"></i></span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftc-no-pb">
+<!-- Intro Section -->
+<section class="ftco-section">
   <div class="container">
-    <h1 class="text-center p-5">Project Page</h1>
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Serving the Ummah Through Action</h2>
+        <p>
+          Higher Lajinah for Islamic Affairs is committed to impactful initiatives that support Islamic life and the well-being of communities across Liberia. From mosque renovations to food distribution during Ramadan, each project is an extension of our mission to serve with sincerity and excellence.
+        </p>
+      </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="row text-center mb-5">
+      <div class="col-md-3 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm">
+          <i class="fas fa-mosque fa-2x text-success mb-3"></i>
+          <h5>Mosque Renovation</h5>
+          <p class="small">Restoring places of worship across underserved communities.</p>
+        </div>
+      </div>
+      <div class="col-md-3 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm">
+          <i class="fas fa-utensils fa-2x text-warning mb-3"></i>
+          <h5>Ramadan Food Aid</h5>
+          <p class="small">Distributing Iftar packages during the blessed month of Ramadan.</p>
+        </div>
+      </div>
+      <div class="col-md-3 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm">
+          <i class="fas fa-hand-holding-heart fa-2x text-danger mb-3"></i>
+          <h5>Refugee Support</h5>
+          <p class="small">Serving Liberian Muslims returning from exile with dignity.</p>
+        </div>
+      </div>
+      <div class="col-md-3 ftco-animate">
+        <div class="project-box border p-4 rounded h-100 shadow-sm">
+          <i class="fas fa-graduation-cap fa-2x text-primary mb-3"></i>
+          <h5>Education Initiatives</h5>
+          <p class="small">Building schools and offering Islamic educational scholarships.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Highlights -->
+    <div class="row">
+      <!-- Example Project -->
+      <div class="col-md-6 col-lg-4 ftco-animate">
+        <div class="blog-entry">
+          <a href="<%= baseURL %>/project-details" class="block-20 rounded" style="background-image: url('/images/project_1.jpg');"></a>
+          <div class="text pt-3">
+            <h3 class="heading"><a href="<%= baseURL %>/project-details">Jama'atul Tawheed Mosque Renovation - Paynesville</a></h3>
+            <p class="mb-2">We rebuilt the collapsed roof and installed a water system for Wudu.</p>
+            <p><a href="<%= baseURL %>/project-details" class="btn btn-sm btn-outline-success">View Details</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example Project -->
+      <div class="col-md-6 col-lg-4 ftco-animate">
+        <div class="blog-entry">
+          <a href="<%= baseURL %>/project-details" class="block-20 rounded" style="background-image: url('/images/ramadan_feeding.jpeg');"></a>
+          <div class="text pt-3">
+            <h3 class="heading"><a href="<%= baseURL %>/project-details">Ramadan Feeding - Bomi District</a></h3>
+            <p class="mb-2">Over 500 fasting Muslims received food packages in rural villages.</p>
+            <p><a href="<%= baseURL %>/project-details" class="btn btn-sm btn-outline-success">View Details</a></p>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Example Project -->
+      <div class="col-md-6 col-lg-4 ftco-animate">
+        <div class="blog-entry">
+          <a href="<%= baseURL %>/project-details" class="block-20 rounded" style="background-image: url('/images/educational_grand.jpg');"></a>
+          <div class="text pt-3">
+            <h3 class="heading"><a href="<%= baseURL %>/project-details">Education Grant - Quranic Center in Lofa</a></h3>
+            <p class="mb-2">We supplied books, uniforms, and fees for 80+ underprivileged students.</p>
+            <p><a href="<%= baseURL %>/project-details" class="btn btn-sm btn-outline-success">View Details</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8 text-center ftco-animate">
+        <h3 class="mb-3">Want to Support a Project?</h3>
+        <p>Help us expand our efforts. Every donation counts toward real change in the lives of our brothers and sisters.</p>
+        <a href="<%= baseURL %>/donate" class="btn btn-success px-4 py-2">Donate Now</a>
+      </div>
+    </div>
   </div>
 </section>
 

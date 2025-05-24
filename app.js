@@ -9,6 +9,8 @@ require("dotenv").config();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use("/higher-lajinah", express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static("uploads"));
@@ -26,6 +28,8 @@ const sessionStore = new MySQLStore({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
+  clearExpired: true,
+  checkExpirationInterval: 900000, // 15 mins
 });
 
 app.use(
@@ -36,7 +40,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      // secure: process.env.NODE_ENV === "production",
+      // httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 2, // 2 hour
       sameSite: true,
       secure: false, // Set to true only if using HTTPS
     },

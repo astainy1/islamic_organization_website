@@ -4,11 +4,13 @@ exports.getHome = (req, res) => {
   //   console.log(hash);
   // });
   res.render("pages/home", {
-    title: "Home | Higher Lajinah for Islamic Affairs",
+    title: "Home - Higher Lajinah for Islamic Affairs",
+    description:
+      "Welcome to Higher Lajinah, Liberia’s Islamic organization for faith, education, and humanitarian service.",
+    url: req.originalUrl,
   });
 };
 
-
 exports.postHome = (req, res) => {
-    res.redirect("/home")
-}
+  res.redirect("/");
+};
