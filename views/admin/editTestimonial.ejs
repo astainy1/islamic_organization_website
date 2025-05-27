@@ -1,0 +1,58 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4 col-md-8 mx-auto">
+      <h3 class="mb-4 text-center">Edit Testimony</h3>
+
+      <form action="/admin/edit-testimony/<%= testimony.id %>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="oldPhoto" value="<%= testimony.photo %>" />
+
+        <div class="mb-3">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" value="<%= testimony.name %>" required />
+        </div>
+
+        <div class="mb-3">
+          <label>Position</label>
+          <input type="text" name="position" class="form-control" value="<%= testimony.position %>" required />
+        </div>
+
+        <div class="mb-3">
+          <label>Message</label>
+          <textarea name="message" class="form-control" rows="4" required><%= testimony.message %></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label>Status</label>
+          <select name="status" class="form-select">
+            <option value="active" <%= testimony.status === "active" ? "selected" : "" %>>Active</option>
+            <option value="pending" <%= testimony.status === "pending" ? "selected" : "" %>>Pending</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>Current Photo</label><br />
+          <img src="/uploads/testimonials/<%= testimony.photo %>" width="100" class="img-thumbnail mb-2" /><br />
+          <input type="file" name="photo" class="form-control" />
+        </div>
+
+        <div class="mb-3"><div class="mb-3">
+  <label for="status" class="form-label">Status</label>
+  <select name="status" class="form-select" required>
+    <option value="pending" <%= testimony.status === 'pending' ? 'selected' : '' %>>Pending</option>
+    <option value="active" <%= testimony.status === 'active' ? 'selected' : '' %>>Active</option>
+    <option value="rejected" <%= testimony.status === 'rejected' ? 'selected' : '' %>>Rejected</option>
+  </select>
+</div>
+</div>
+        <button type="submit" class="btn btn-success w-100">Update Testimony</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>
+

@@ -73,5 +73,63 @@ CREATE TABLE project_gallery (
   FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
 );
 
+-- Announcement 
+CREATE TABLE announcements (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  summary TEXT NOT NULL,
+  content TEXT NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  event_date DATE NOT NULL,
+  event_time VARCHAR(50) NOT NULL,
+  post_date DATE DEFAULT CURRENT_DATE,
+  cta_text VARCHAR(100),
+  cta_link VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
+-- Testimonial 
+CREATE TABLE testimonials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  position VARCHAR(100) NOT NULL,
+  message TEXT NOT NULL,
+  photo VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Documents
+
+CREATE TABLE documents (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  display_info VARCHAR(255) NOT NULL,
+  category ENUM(
+    'Legal Documents',
+    'Organizational Structure',
+    'International Recommendations',
+    'Media & Presentations'
+  ) NOT NULL,
+  file_path VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- News
+
+CREATE TABLE news (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) UNIQUE NOT NULL,
+  summary TEXT,
+  content TEXT,
+  author VARCHAR(100),
+  category VARCHAR(100) NOT NULL,
+  cover_image VARCHAR(255),
+  gallery JSON,
+  tags JSON,
+  post_date DATE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 

@@ -1,26 +1,192 @@
-<%- include("../partials/adminheader.ejs") %>
+<%- include("../partials/adminheader.ejs") %> <%- include("./menu/sidebar.ejs")
+%>
 
-<!-- Sidebar Start -->
-<%- include("./menu/sidebar.ejs") %>
-<!-- Sidebar End -->
-
-<!-- Content Start -->
 <div class="content">
-  <!-- Navbar Start -->
-
   <%- include("./menu/navbar.ejs") %>
-  <!-- Blank Start -->
+
   <div class="container-fluid pt-4 px-4">
-    <div
-      class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0"
-    >
-      <div class="col-md-6 text-center">
-        <h3>This is blank Add News page</h3>
-      </div>
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Add New News Post</h4>
+
+      <form
+        action="/admin/add-news"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="row g-3">
+          <!-- Post Title -->
+          <div class="col-md-12">
+            <label for="title" class="form-label">Post Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="form-control"
+              required
+              placeholder="e.g. Ramadan Reflections from Our Students"
+            />
+            <div class="invalid-feedback">Title is required.</div>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-12">
+            <label for="summary" class="form-label">Short Summary</label>
+            <textarea
+              id="summary"
+              name="summary"
+              rows="2"
+              class="form-control"
+              placeholder="Brief summary or subtitle..."
+              required
+            ></textarea>
+            <div class="invalid-feedback">Summary is required.</div>
+          </div>
+
+          <!-- Author and Date -->
+          <div class="col-md-6">
+            <label for="author" class="form-label">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              class="form-control"
+              placeholder="e.g. Admin"
+              required
+            />
+            <div class="invalid-feedback">Author name is required.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="date" class="form-label">Publication Date</label>
+            <input
+              type="date"
+              id="date"
+              name="post_date"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Publication date is required.</div>
+          </div>
+
+          <!-- Tags -->
+          <div class="col-md-12">
+            <label for="tags" class="form-label">Tags (comma-separated)</label>
+            <input
+              type="text"
+              id="tags"
+              name="tags"
+              class="form-control"
+              placeholder="e.g. Faith, Youth, Community"
+            />
+          </div>
+
+          <!-- Category -->
+          <div class="col-md-12">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" name="category" class="form-control" required>
+              <option value="">-- Select Category --</option>
+              <option value="Faith">Faith</option>
+              <option value="Youth">Youth</option>
+              <option value="Community">Community</option>
+            </select>
+            <div class="invalid-feedback">Category is required.</div>
+          </div>
+
+          <!-- Cover Image -->
+          <div class="col-md-6">
+            <label for="cover_image" class="form-label">Main Cover Image</label>
+            <input
+              type="file"
+              id="cover_image"
+              name="cover_image"
+              accept="image/*"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">A cover image is required.</div>
+          </div>
+
+          <!-- Gallery Images -->
+          <div class="col-md-6">
+            <label for="galleryInput" class="form-label"
+              >Gallery Images (max 5)</label
+            >
+            <input
+              type="file"
+              id="galleryInput"
+              name="gallery"
+              accept="image/*"
+              class="form-control"
+              multiple
+            />
+            <div class="text-danger small mt-1" id="galleryError"></div>
+          </div>
+
+          <!-- Full Content -->
+          <div class="col-md-12">
+            <label for="content" class="form-label">Full Content</label>
+            <textarea
+              id="content"
+              name="content"
+              rows="10"
+              class="form-control"
+              placeholder="Write your full article here..."
+              required
+            ></textarea>
+            <div class="invalid-feedback">Content is required.</div>
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-success px-5">
+              Publish Post
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-  <!-- Blank End -->
 
-  <!-- Footer Start -->
+  <!-- Gallery validation and Bootstrap form validation -->
+  <script>
+    // Limit gallery file count
+    document
+      .getElementById("galleryInput")
+      .addEventListener("change", function () {
+        const files = this.files;
+        const error = document.getElementById("galleryError");
+
+        if (files.length > 5) {
+          error.innerText = "You can upload up to 5 images only.";
+          this.value = "";
+          this.classList.add("is-invalid");
+        } else {
+          error.innerText = "";
+          this.classList.remove("is-invalid");
+        }
+      });
+
+    // Bootstrap form validation
+    (function () {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.from(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+
   <%- include("../partials/adminfooter.ejs") %>
-
+</div>

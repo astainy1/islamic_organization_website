@@ -1,26 +1,56 @@
 <%- include("../partials/adminheader.ejs") %>
-
-<!-- Sidebar Start -->
 <%- include("./menu/sidebar.ejs") %>
-<!-- Sidebar End -->
 
-<!-- Content Start -->
 <div class="content">
-  <!-- Navbar Start -->
-
   <%- include("./menu/navbar.ejs") %>
-  <!-- Blank Start -->
+
   <div class="container-fluid pt-4 px-4">
-    <div
-      class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0"
-    >
-      <div class="col-md-6 text-center">
-        <h3>This is blank Add Document page</h3>
-      </div>
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Upload New Document</h4>
+
+      <form action="/admin/add-document" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="row g-3">
+
+          <!-- Title -->
+          <div class="col-md-6">
+            <label class="form-label">Document Title</label>
+            <input type="text" name="title" class="form-control" placeholder="e.g. Constitution & Bye-Laws" required />
+          </div>
+
+          <!-- Display Date or Origin -->
+          <div class="col-md-6">
+            <label class="form-label">Display Info</label>
+            <input type="text" name="date" class="form-control" placeholder="e.g. Jan 2022 or Mecca, Saudi Arabia" required />
+          </div>
+
+          <!-- Category -->
+          <div class="col-md-6">
+            <label class="form-label">Category</label>
+            <select name="category" class="form-select" required>
+              <option value="">-- Select Category --</option>
+              <option value="Legal Documents">Legal Documents</option>
+              <option value="Organizational Structure">Organizational Structure</option>
+              <option value="International Recommendations">International Recommendations</option>
+              <option value="Media & Presentations">Media & Presentations</option>
+            </select>
+          </div>
+
+          <!-- File Upload -->
+          <div class="col-md-6">
+            <label class="form-label">Upload PDF File</label>
+            <input type="file" name="file" accept="application/pdf" class="form-control" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-success px-5">
+              Save Document
+            </button>
+          </div>
+
+        </div>
+      </form>
     </div>
   </div>
-  <!-- Blank End -->
 
-  <!-- Footer Start -->
   <%- include("../partials/adminfooter.ejs") %>
-

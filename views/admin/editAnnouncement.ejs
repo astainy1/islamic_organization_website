@@ -1,0 +1,78 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Edit Announcement</h4>
+
+      <form action="/admin/announcements/edit/<%= announcement.id %>" method="POST" class="needs-validation" novalidate>
+        <div class="row g-3">
+
+          <!-- Title -->
+          <div class="col-md-8">
+            <label class="form-label">Announcement Title</label>
+            <input type="text" name="title" class="form-control" value="<%= announcement.title %>" required />
+          </div>
+
+          <!-- Post Date -->
+          <div class="col-md-4">
+            <label class="form-label">Post Date</label>
+            <input type="date" name="post_date" class="form-control" value="<%= announcement.post_date.toISOString().split('T')[0] %>" required />
+          </div>
+
+          <!-- Summary -->
+          <div class="col-md-12">
+            <label class="form-label">Short Summary</label>
+            <textarea name="summary" class="form-control" rows="2" required><%= announcement.summary %></textarea>
+          </div>
+
+          <!-- Location -->
+          <div class="col-md-6">
+            <label class="form-label">Location / Venue</label>
+            <input type="text" name="location" class="form-control" value="<%= announcement.location %>" required />
+          </div>
+
+          <!-- Event Date -->
+          <div class="col-md-3">
+            <label class="form-label">Event Date</label>
+            <input type="date" name="event_date" class="form-control" value="<%= announcement.event_date.toISOString().split('T')[0] %>" required />
+          </div>
+
+          <!-- Event Time -->
+          <div class="col-md-3">
+            <label class="form-label">Time</label>
+            <input type="text" name="event_time" class="form-control" value="<%= announcement.event_time %>" required />
+          </div>
+
+          <!-- Content -->
+          <div class="col-md-12">
+            <label class="form-label">Full Announcement</label>
+            <textarea name="content" class="form-control" rows="8" required><%= announcement.content %></textarea>
+          </div>
+
+          <!-- CTA -->
+          <div class="col-md-6">
+            <label class="form-label">Button Text (Optional)</label>
+            <input type="text" name="cta_text" class="form-control" value="<%= announcement.cta_text || '' %>" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">CTA Link</label>
+            <input type="url" name="cta_link" class="form-control" value="<%= announcement.cta_link || '' %>" />
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-success px-5">
+              Update Announcement
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>
+

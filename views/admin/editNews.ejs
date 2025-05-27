@@ -1,0 +1,85 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-4 text-center">Edit News Post</h4>
+
+      <form action="/admin/news/edit/<%= news.id %>" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <input type="hidden" name="existing_cover_image" value="<%= news.cover_image %>">
+        <input type="hidden" name="existing_gallery" value='<%= news.gallery %>'>
+
+        <!-- Pre-fill fields with news values -->
+        <div class="row g-3">
+          <div class="col-md-12">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control" value="<%= news.title %>" required>
+          </div>
+
+          <div class="col-md-12">
+            <label>Summary</label>
+            <textarea name="summary" class="form-control" required><%= news.summary %></textarea>
+          </div>
+
+          <div class="col-md-6">
+            <label>Author</label>
+            <input type="text" name="author" class="form-control" value="<%= news.author %>" required>
+          </div>
+
+          <div class="col-md-6">
+            <label>Post Date</label>
+            <input type="date" name="post_date" class="form-control" value="<%= new Date(news.post_date).toISOString().split('T')[0] %>" required>
+          </div>
+
+          <div class="col-md-6">
+            <label>Tags</label>
+           <input type="text" name="tags" class="form-control" value="<%= news.tags.join(', ') %>">
+
+          </div>
+
+          <!-- Category -->
+    <div class="col-md-6">
+      <label>Category</label>
+      <select name="category" class="form-control" required>
+        <option value="">-- Select Category --</option>
+        <option value="Faith" <%= news.category === "Faith" ? "selected" : "" %>>Faith</option>
+        <option value="Youth" <%= news.category === "Youth" ? "selected" : "" %>>Youth</option>
+        <option value="Community" <%= news.category === "Community" ? "selected" : "" %>>Community</option>
+      </select>
+    </div>
+
+          <div class="col-md-12">
+            <label>Full Content</label>
+            <textarea name="content" class="form-control" rows="8"><%= news.content %></textarea>
+          </div>
+
+          <div class="col-md-6">
+            <label>Cover Image</label><br>
+            <% if (news.cover_image) { %>
+              <img src="/uploads/news/<%= news.cover_image %>" width="100" class="img-thumbnail mb-2">
+            <% } %>
+            <input type="file" name="cover_image" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <label>Gallery (replace)</label><br>
+            <% if (news.gallery.length > 0) {
+  news.gallery.forEach(img => { %>
+    <img src="/uploads/news/<%= img %>" width="80" class="me-2 mb-2">
+<% }) } %>
+
+            <input type="file" name="gallery" class="form-control" accept="image/*" multiple>
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success px-5">Update News</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>

@@ -6,6 +6,9 @@ const auth = require("../middleware/auth");
 const userProfileUpload = require("../middleware/userProfile");
 const uploadProgram = require("../middleware/programUpload");
 const uploadProject = require("../middleware/projectUpload");
+const uploadTestimonial = require("../middleware/testimonialUpload");
+const documentUpload = require("../middleware/documentUpload");
+const newsUpload = require("../middleware/newsUpload");
 
 // Import Controller
 const login = require("../controller/admin/login");
@@ -89,26 +92,59 @@ router.get("/edit-project/:id", auth, projects.getEditProject);
 router.post("/edit-project/:id", auth, uploadProject, projects.postEditProject);
 
 // Announcements
-router.get("/add-announcement", auth, announcement.getAnnouncement);
-router.post("/add-announcement", auth, announcement.getAnnouncement);
-router.get("/manage-announcements", auth, announcement.getManageAnnouncement)
+router.get("/add-announcement", auth, announcement.getAddAnnouncement);
+router.post("/add-announcement", auth, announcement.postAddAnnouncement);
+router.get("/manage-announcements", auth, announcement.getManageAnnouncement);
+router.post("/manage-announcements/:id", auth, announcement.togglePostStatus);
+router.get("/announcements/edit/:id", auth, announcement.getEditAnnouncement);
+router.post("/announcements/edit/:id", auth, announcement.postEditAnnouncement);
+router.get("/announcements/view/:id", auth, announcement.getViewAnnouncement);
+router.post(
+  "/announcements/delete/:id",
+  auth,
+  announcement.postDeleteAnnouncement
+);
 
 // Testimonial Routes
 router.get("/add-testimonial", auth, testimonial.getAddTestimonial);
-router.post("/add-testimonial", auth, testimonial.postAddTestimonial);
+router.post(
+  "/add-testimonial",
+  auth,
+  uploadTestimonial.single("photo"),
+  testimonial.postAddTestimonial
+);
 router.get("/manage-testimonials", auth, testimonial.getManageTestimonial);
-router.post("/manage-testimonials", auth, testimonial.postManageTestimonial);
+// Delete
+router.post("/testimonial/delete/:id", auth, testimonial.deleteTestimonial);
+// Status update
+router.post("/testimonial/status/:id", auth, testimonial.toggleStatus);
+router.get("/edit-testimonial/:id", auth, testimonial.getEditTestimonial);
+router.post(
+  "/edit-testimonial/:id",
+  auth,
+  uploadTestimonial.single("photo"),
+  testimonial.postEditTestimonial
+);
 
 // Upload Documents Routes
 router.get("/add-document", auth, documents.getAddDocument);
-router.post("/add-document", auth, documents.postAddDocument);
+router.post(
+  "/add-document",
+  auth,
+  documentUpload.single("file"),
+  documents.postAddDocument
+);
 router.get("/manage-document", auth, documents.getManageDocument);
-router.post("/manage-document", auth, documents.postManageDocument);
+router.post("/documents/delete/:id", auth, documents.postDeleteDocument);
 
 // News Routes
 router.get("/add-news", auth, news.getAddNews);
-router.post("/add-news", auth, news.postAddNews);
+router.post("/add-news", auth, newsUpload, news.postAddNews);
 router.get("/manage-news", auth, news.getManageNews);
+router.get("/news/view/:id", auth, news.viewNews);
+router.get("/news/edit/:id", auth, news.getEditNews);
+router.post("/news/edit/:id", auth, newsUpload, news.postEditNews);
+router.post("/news/delete/:id", auth, news.deleteNews);
 
 // Leadership Routes
 router.get("/add-leader", auth, leader.getAddLeader);

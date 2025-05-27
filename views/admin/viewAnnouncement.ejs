@@ -1,0 +1,28 @@
+<%- include("../partials/adminheader.ejs") %>
+<%- include("./menu/sidebar.ejs") %>
+
+<div class="content">
+  <%- include("./menu/navbar.ejs") %>
+
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded p-4">
+      <h4 class="mb-3">View Announcement</h4>
+
+      <table class="table table-bordered">
+        <tr><th>Title</th><td><%= announcement.title %></td></tr>
+        <tr><th>Summary</th><td><%= announcement.summary %></td></tr>
+        <tr><th>Content</th><td><%= announcement.content %></td></tr>
+        <tr><th>Location</th><td><%= announcement.location %></td></tr>
+        <tr><th>Event Date</th><td><%= new Date(announcement.event_date).toLocaleDateString() %></td></tr>
+        <tr><th>Event Time</th><td><%= announcement.event_time %></td></tr>
+        <tr><th>Post Date</th><td><%= new Date(announcement.post_date).toLocaleDateString() %></td></tr>
+        <tr><th>CTA Text</th><td><%= announcement.cta_text || '-' %></td></tr>
+        <tr><th>CTA Link</th><td><a href="<%= announcement.cta_link %>"><%= announcement.cta_link %></a></td></tr>
+      </table>
+
+      <a href="/admin/manage-announcements" class="btn btn-secondary mt-3">Back</a>
+    </div>
+  </div>
+
+  <%- include("../partials/adminfooter.ejs") %>
+
